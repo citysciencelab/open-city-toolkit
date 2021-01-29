@@ -258,17 +258,6 @@ const services = [
   },
   // Proposed CDP 203 GROUP Layers
   {
-    layers: 'Proposed_CDP_2030_BMC_Landuse',
-    displayName: 'Proposed CDP 2030',
-    format: 'image/png',
-    transparent: true,
-    legend: true,
-    maxZoom: 20,
-    minZoom: 1,
-    type: 'vector',
-    group: 'Proposed CDP 2030'
-  },
-  {
     layers: 'Agriculture_Area',
     displayName: 'Agriculture',
     format: 'image/png',

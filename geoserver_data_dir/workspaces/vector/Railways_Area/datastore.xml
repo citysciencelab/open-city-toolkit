@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl--33f7ced4:17742606d0b:-7ffc</id>
+  <name>Railways_Area</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Railways_Area.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:Hu3T4qnC2dPUyyu6IE4W8MlgBafR5hsq</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 05:59:00.639 UTC</dateCreated>
+</dataStore>

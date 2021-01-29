@@ -1,0 +1,17 @@
+<layer>
+  <name>Banks</name>
+  <id>LayerInfoImpl-2dc2df3b:177433d57f8:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7ffa</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-2dc2df3b:177433d57f8:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 10:13:03.671 UTC</dateCreated>
+  <dateModified>2021-01-29 06:37:40.675 UTC</dateModified>
+</layer>

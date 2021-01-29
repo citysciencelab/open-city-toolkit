@@ -1,0 +1,17 @@
+<layer>
+  <name>Retail_Commercial_and_Bussiness_use_Zone</name>
+  <id>LayerInfoImpl-59cb850a:1773983d10e:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7ff4</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-59cb850a:1773983d10e:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-25 12:36:11.611 UTC</dateCreated>
+  <dateModified>2021-01-28 11:20:04.415 UTC</dateModified>
+</layer>

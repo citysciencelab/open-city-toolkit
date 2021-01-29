@@ -1,0 +1,17 @@
+<layer>
+  <name>Shopping_Places</name>
+  <id>LayerInfoImpl-2dc2df3b:177433d57f8:-7feb</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7fd6</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-2dc2df3b:177433d57f8:-7fec</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 10:42:01.670 UTC</dateCreated>
+  <dateModified>2021-01-29 07:11:18.358 UTC</dateModified>
+</layer>

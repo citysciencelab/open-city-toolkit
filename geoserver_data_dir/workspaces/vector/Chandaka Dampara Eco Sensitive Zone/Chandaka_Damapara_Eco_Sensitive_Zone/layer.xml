@@ -1,0 +1,17 @@
+<layer>
+  <name>Chandaka_Damapara_Eco_Sensitive_Zone</name>
+  <id>LayerInfoImpl--5ceb1e9:17742a00fd6:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--562f553f:177490865f4:-7fe5</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--5ceb1e9:17742a00fd6:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 07:12:48.578 UTC</dateCreated>
+  <dateModified>2021-01-28 12:59:45.112 UTC</dateModified>
+</layer>

@@ -1,0 +1,17 @@
+<layer>
+  <name>Forest_Area</name>
+  <id>LayerInfoImpl--531e03b5:177397d27a6:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7ff8</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--531e03b5:177397d27a6:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-25 12:24:26.89 UTC</dateCreated>
+  <dateModified>2021-01-28 11:17:31.622 UTC</dateModified>
+</layer>

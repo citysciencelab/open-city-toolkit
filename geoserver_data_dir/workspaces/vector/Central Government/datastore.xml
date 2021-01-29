@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl--1408e31d:17743982f38:-7ffc</id>
+  <name>Central Government</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Central_Government_Offices.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:hT2ljj2bWWJmNKYPWhmoVuBJOXdIrmP2</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 11:32:11.288 UTC</dateCreated>
+</dataStore>

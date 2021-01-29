@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl--5ceb1e9:17742a00fd6:-7ffc</id>
+  <name>Chandaka Dampara Eco Sensitive Zone</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Chandaka Damapara Eco Sensitive Zone.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:gs6plB3I4wQVTE965/bONyJoU1Pbpz5W</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 07:12:15.31 UTC</dateCreated>
+</dataStore>

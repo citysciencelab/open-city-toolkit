@@ -1,0 +1,17 @@
+<layer>
+  <name>General_Post_Office</name>
+  <id>LayerInfoImpl--10fa4fed:17743297f45:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-5e0dd8b0:1774c8eebdb:-7ff6</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--10fa4fed:17743297f45:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 09:40:58.272 UTC</dateCreated>
+  <dateModified>2021-01-29 06:49:05.873 UTC</dateModified>
+</layer>

@@ -1,0 +1,17 @@
+<layer>
+  <name>City_Level_Offices</name>
+  <id>LayerInfoImpl--1408e31d:17743982f38:-7ff4</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7e893d34:1774d0fd6b9:-7fdd</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--1408e31d:17743982f38:-7ff5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 11:34:37.645 UTC</dateCreated>
+  <dateModified>2021-01-29 08:54:27.418 UTC</dateModified>
+</layer>

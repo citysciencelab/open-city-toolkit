@@ -1,0 +1,17 @@
+<layer>
+  <name>Rivers_Canals_Stream_Area</name>
+  <id>LayerInfoImpl-5dd23270:17742469742:-7fea</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fc8</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-5dd23270:17742469742:-7feb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:42:04.939 UTC</dateCreated>
+  <dateModified>2021-01-28 12:42:43.179 UTC</dateModified>
+</layer>

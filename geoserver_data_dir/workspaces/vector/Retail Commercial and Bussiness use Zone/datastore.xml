@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl-59cb850a:1773983d10e:-7ffc</id>
+  <name>Retail Commercial and Bussiness use Zone</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Retail_Commercial_and_Bussiness_Use_Zone_Area.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:xlezP5IhAHUZcHtVaN9RnlS6H34s7a28</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-25 12:35:30.658 UTC</dateCreated>
+</dataStore>

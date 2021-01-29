@@ -1,0 +1,17 @@
+<layer>
+  <name>Residential_within_Special_Heritage_Zone_Area</name>
+  <id>LayerInfoImpl-5dd23270:17742469742:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fd4</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-5dd23270:17742469742:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:30:39.920 UTC</dateCreated>
+  <dateModified>2021-01-28 12:26:39.996 UTC</dateModified>
+</layer>

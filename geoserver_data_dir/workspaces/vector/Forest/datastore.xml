@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl--531e03b5:177397d27a6:-7ffc</id>
+  <name>Forest</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Forest_Area.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:+HCKNtKzqFV49vzOJ9nYfYjemM9wRPv5</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-25 12:23:53.743 UTC</dateCreated>
+</dataStore>

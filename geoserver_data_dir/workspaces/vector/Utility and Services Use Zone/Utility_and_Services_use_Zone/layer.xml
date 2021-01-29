@@ -1,0 +1,17 @@
+<layer>
+  <name>Utility_and_Services_use_Zone</name>
+  <id>LayerInfoImpl-5dd23270:17742469742:-7fed</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fcc</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-5dd23270:17742469742:-7fee</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:40:18.529 UTC</dateCreated>
+  <dateModified>2021-01-28 12:39:25.391 UTC</dateModified>
+</layer>

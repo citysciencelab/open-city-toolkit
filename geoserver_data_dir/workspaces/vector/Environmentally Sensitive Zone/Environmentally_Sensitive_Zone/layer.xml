@@ -1,0 +1,17 @@
+<layer>
+  <name>Environmentally_Sensitive_Zone</name>
+  <id>LayerInfoImpl-59cb850a:1773983d10e:-7ff4</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7ff0</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-59cb850a:1773983d10e:-7ff5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-25 12:39:08.220 UTC</dateCreated>
+  <dateModified>2021-01-28 11:34:06.943 UTC</dateModified>
+</layer>

@@ -1,0 +1,17 @@
+<layer>
+  <name>Industrial_Use_Zone</name>
+  <id>LayerInfoImpl-59cb850a:1773983d10e:-7ff1</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fe9</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-59cb850a:1773983d10e:-7ff2</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-25 12:44:12.582 UTC</dateCreated>
+  <dateModified>2021-01-28 11:36:33.678 UTC</dateModified>
+</layer>

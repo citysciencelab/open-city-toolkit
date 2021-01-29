@@ -1,0 +1,17 @@
+<layer>
+  <name>Sub_Post_Offices</name>
+  <id>LayerInfoImpl--10fa4fed:17743297f45:-7ff4</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-1f5cd7a:1774caebe3b:-7ff6</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--10fa4fed:17743297f45:-7ff5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 09:44:14.369 UTC</dateCreated>
+  <dateModified>2021-01-29 06:56:03.114 UTC</dateModified>
+</layer>

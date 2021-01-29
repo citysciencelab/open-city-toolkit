@@ -1,0 +1,16 @@
+<layer>
+  <name>Training_Institutes_Other</name>
+  <id>LayerInfoImpl--9a2444c:177438fdade:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-50f2cee3:1719bd49253:-8000</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--9a2444c:177438fdade:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 11:19:19.930 UTC</dateCreated>
+</layer>

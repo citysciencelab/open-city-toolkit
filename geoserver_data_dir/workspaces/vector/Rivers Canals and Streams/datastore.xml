@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl-5dd23270:17742469742:-7fec</id>
+  <name>Rivers Canals and Streams</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Rivers_Canals_Stream_Area.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:f17q4wsdV7PhDmZPDX3/mOo+DjiUe6SF</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 05:41:36.456 UTC</dateCreated>
+</dataStore>

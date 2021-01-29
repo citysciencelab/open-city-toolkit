@@ -1,0 +1,17 @@
+<layer>
+  <name>Public_and_Semi_public_within_Special_Heritage_Zone_Area</name>
+  <id>LayerInfoImpl-4efbcded:177422fc4d6:-7ff1</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fd8</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-4efbcded:177422fc4d6:-7ff2</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:15:31.771 UTC</dateCreated>
+  <dateModified>2021-01-28 12:24:05.816 UTC</dateModified>
+</layer>

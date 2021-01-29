@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl-589299ad:177426eef8c:-7ffc</id>
+  <name>NOC To Be Obtained From AAI</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/NOC To Be Obtained From AAI.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:Zgf98BUnp2mqV4X4epg5e4hf/Gzh9/de</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 06:39:07.815 UTC</dateCreated>
+</dataStore>

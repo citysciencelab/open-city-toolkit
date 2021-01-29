@@ -1,0 +1,17 @@
+<layer>
+  <name>Branch_Post_Offices</name>
+  <id>LayerInfoImpl--10fa4fed:17743297f45:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-26f92267:1774ca1b0a4:-7ffa</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--10fa4fed:17743297f45:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 09:43:05.727 UTC</dateCreated>
+  <dateModified>2021-01-29 06:52:30.440 UTC</dateModified>
+</layer>

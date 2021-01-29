@@ -1,0 +1,17 @@
+<layer>
+  <name>Resturants</name>
+  <id>LayerInfoImpl-2dc2df3b:177433d57f8:-7ff4</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7fe2</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-2dc2df3b:177433d57f8:-7ff5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 10:16:12.812 UTC</dateCreated>
+  <dateModified>2021-01-29 07:02:08.738 UTC</dateModified>
+</layer>

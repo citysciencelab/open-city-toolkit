@@ -1,0 +1,17 @@
+<layer>
+  <name>Protected_Area</name>
+  <id>LayerInfoImpl--348b1efa:17743b6526f:-7ff9</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--562f553f:177490865f4:-7fdd</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--348b1efa:17743b6526f:-7ffa</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 12:17:50.70 UTC</dateCreated>
+  <dateModified>2021-01-28 13:02:44.57 UTC</dateModified>
+</layer>

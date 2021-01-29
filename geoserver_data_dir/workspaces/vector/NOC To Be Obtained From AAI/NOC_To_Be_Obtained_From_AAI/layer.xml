@@ -1,0 +1,17 @@
+<layer>
+  <name>NOC_To_Be_Obtained_From_AAI</name>
+  <id>LayerInfoImpl-589299ad:177426eef8c:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--562f553f:177490865f4:-7ffc</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-589299ad:177426eef8c:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 06:39:44.967 UTC</dateCreated>
+  <dateModified>2021-01-28 12:51:44.705 UTC</dateModified>
+</layer>

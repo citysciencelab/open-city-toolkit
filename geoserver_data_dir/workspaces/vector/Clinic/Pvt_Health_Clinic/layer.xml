@@ -1,0 +1,17 @@
+<layer>
+  <name>Pvt_Health_Clinic</name>
+  <id>LayerInfoImpl-37a69c58:17743a0ebd6:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7e893d34:1774d0fd6b9:-7ff2</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-37a69c58:17743a0ebd6:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 11:51:55.842 UTC</dateCreated>
+  <dateModified>2021-01-29 08:31:26.996 UTC</dateModified>
+</layer>

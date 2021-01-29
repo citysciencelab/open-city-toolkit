@@ -1,0 +1,17 @@
+<layer>
+  <name>Proposed_CDP_2030_BMC_Landuse</name>
+  <id>LayerInfoImpl-2969cd93:17742292866:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-50f2cee3:1719bd49253:-7ffe</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-2969cd93:17742292866:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 04:49:25.995 UTC</dateCreated>
+  <dateModified>2021-01-27 04:49:40.373 UTC</dateModified>
+</layer>

@@ -1,0 +1,17 @@
+<layer>
+  <name>Other_Health_Facility</name>
+  <id>LayerInfoImpl-37a69c58:17743a0ebd6:-7ff1</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7e893d34:1774d0fd6b9:-7fe6</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-37a69c58:17743a0ebd6:-7ff2</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 11:57:20.911 UTC</dateCreated>
+  <dateModified>2021-01-29 08:46:02.665 UTC</dateModified>
+</layer>

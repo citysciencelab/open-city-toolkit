@@ -1,0 +1,17 @@
+<layer>
+  <name>Community_Centers</name>
+  <id>LayerInfoImpl-2dc2df3b:177433d57f8:-7fee</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7fdb</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-2dc2df3b:177433d57f8:-7fef</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 10:20:09.831 UTC</dateCreated>
+  <dateModified>2021-01-29 07:08:38.168 UTC</dateModified>
+</layer>

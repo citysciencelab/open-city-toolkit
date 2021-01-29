@@ -1,0 +1,17 @@
+<layer>
+  <name>Petrol_Pumps</name>
+  <id>LayerInfoImpl-2dc2df3b:177433d57f8:-7ff1</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7fde</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-2dc2df3b:177433d57f8:-7ff2</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 10:18:27.444 UTC</dateCreated>
+  <dateModified>2021-01-29 07:05:16.941 UTC</dateModified>
+</layer>

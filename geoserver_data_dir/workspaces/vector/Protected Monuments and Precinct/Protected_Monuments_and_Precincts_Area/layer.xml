@@ -1,0 +1,16 @@
+<layer>
+  <name>Protected_Monuments_and_Precincts_Area</name>
+  <id>LayerInfoImpl-4efbcded:177422fc4d6:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-50f2cee3:1719bd49253:-7ffe</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-4efbcded:177422fc4d6:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:01:29.751 UTC</dateCreated>
+</layer>

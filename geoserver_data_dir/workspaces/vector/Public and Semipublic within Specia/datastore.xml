@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl-4efbcded:177422fc4d6:-7ff3</id>
+  <name>Public and Semipublic within Specia</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Public_and_Semi_public_within_Special_Heritage_Zone_Area.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:NDYhM1tFz0gGeMNO7r387Xrid9rO2MqL</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 05:13:35.935 UTC</dateCreated>
+</dataStore>

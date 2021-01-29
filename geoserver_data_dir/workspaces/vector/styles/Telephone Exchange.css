@@ -1,0 +1,8 @@
+/* @title gold point */
+* {
+    mark: symbol(square);
+    mark-size: 16px;
+    :mark {
+        fill: #6495ed;
+    }
+}

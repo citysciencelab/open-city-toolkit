@@ -1,0 +1,17 @@
+<layer>
+  <name>Commercial_within_Special_Heritage_Zone_Area</name>
+  <id>LayerInfoImpl-4efbcded:177422fc4d6:-7ff4</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fdc</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-4efbcded:177422fc4d6:-7ff5</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:04:44.288 UTC</dateCreated>
+  <dateModified>2021-01-28 12:15:13.936 UTC</dateModified>
+</layer>

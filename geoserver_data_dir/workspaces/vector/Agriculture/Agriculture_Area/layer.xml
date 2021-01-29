@@ -1,0 +1,17 @@
+<layer>
+  <name>Agriculture_Area</name>
+  <id>LayerInfoImpl--63861973:177396dc0f9:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-1ec3ff27:17748582389:-7ff8</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--63861973:177396dc0f9:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-25 12:13:14.102 UTC</dateCreated>
+  <dateModified>2021-01-28 10:09:42.546 UTC</dateModified>
+</layer>

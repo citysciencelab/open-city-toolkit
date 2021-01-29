@@ -1,0 +1,17 @@
+<layer>
+  <name>Pvt_Hospitals</name>
+  <id>LayerInfoImpl-37a69c58:17743a0ebd6:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7e893d34:1774d0fd6b9:-7fef</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-37a69c58:17743a0ebd6:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 11:53:53.417 UTC</dateCreated>
+  <dateModified>2021-01-29 08:59:34.277 UTC</dateModified>
+</layer>

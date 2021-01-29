@@ -1,0 +1,17 @@
+<layer>
+  <name>Ponds_Lakes_Lagoons_Area</name>
+  <id>LayerInfoImpl-5dd23270:17742469742:-7fe7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fc4</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-5dd23270:17742469742:-7fe8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:43:20.446 UTC</dateCreated>
+  <dateModified>2021-01-28 12:45:31.139 UTC</dateModified>
+</layer>

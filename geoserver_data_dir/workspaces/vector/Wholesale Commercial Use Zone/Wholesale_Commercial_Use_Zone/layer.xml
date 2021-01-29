@@ -1,0 +1,17 @@
+<layer>
+  <name>Wholesale_Commercial_Use_Zone</name>
+  <id>LayerInfoImpl-59cb850a:1773983d10e:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-50f2cee3:1719bd49253:-7ffe</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-59cb850a:1773983d10e:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-25 12:38:07.299 UTC</dateCreated>
+  <dateModified>2021-01-27 04:39:43.646 UTC</dateModified>
+</layer>

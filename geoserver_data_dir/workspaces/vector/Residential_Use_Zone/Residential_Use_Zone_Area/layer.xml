@@ -1,0 +1,17 @@
+<layer>
+  <name>Residential_Use_Zone_Area</name>
+  <id>LayerInfoImpl-4efbcded:177422fc4d6:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fe0</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-4efbcded:177422fc4d6:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 04:56:35.986 UTC</dateCreated>
+  <dateModified>2021-01-28 12:13:29.666 UTC</dateModified>
+</layer>

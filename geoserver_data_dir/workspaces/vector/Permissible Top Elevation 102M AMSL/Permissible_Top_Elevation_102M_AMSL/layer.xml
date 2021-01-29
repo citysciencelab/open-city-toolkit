@@ -1,0 +1,17 @@
+<layer>
+  <name>Permissible_Top_Elevation_102M_AMSL</name>
+  <id>LayerInfoImpl-589299ad:177426eef8c:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--562f553f:177490865f4:-7ff7</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-589299ad:177426eef8c:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 06:42:44.615 UTC</dateCreated>
+  <dateModified>2021-01-28 12:53:27.357 UTC</dateModified>
+</layer>

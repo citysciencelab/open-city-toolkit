@@ -1,0 +1,16 @@
+<layer>
+  <name>Bus_Depots_Area</name>
+  <id>LayerInfoImpl-5dd23270:17742469742:-7ff0</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-50f2cee3:1719bd49253:-7ffe</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-5dd23270:17742469742:-7ff1</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:38:40.638 UTC</dateCreated>
+</layer>

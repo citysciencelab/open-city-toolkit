@@ -1,0 +1,16 @@
+<layer>
+  <name>Railways_Area</name>
+  <id>LayerInfoImpl--33f7ced4:17742606d0b:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-50f2cee3:1719bd49253:-7ffe</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--33f7ced4:17742606d0b:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 05:59:16.380 UTC</dateCreated>
+</layer>

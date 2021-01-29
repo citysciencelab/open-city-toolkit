@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl-589299ad:177426eef8c:-7ff6</id>
+  <name>Permissible Top Elevation 122M AMSL</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Permissible Top Elevation 122M AMSL.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:bsWse4z2X8lg5ipak7MGfChFwl3TX5uk</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 06:45:11.173 UTC</dateCreated>
+</dataStore>

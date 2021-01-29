@@ -1,0 +1,17 @@
+<layer>
+  <name>School_OPEPA_DISE School_OPEPE_DISE</name>
+  <id>LayerInfoImpl-c3602c:1774375fb64:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7fc9</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-c3602c:1774375fb64:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 11:03:36.527 UTC</dateCreated>
+  <dateModified>2021-01-29 07:22:01.416 UTC</dateModified>
+</layer>

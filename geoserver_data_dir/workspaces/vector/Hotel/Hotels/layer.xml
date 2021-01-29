@@ -1,0 +1,17 @@
+<layer>
+  <name>Hotels</name>
+  <id>LayerInfoImpl-2dc2df3b:177433d57f8:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7fe6</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-2dc2df3b:177433d57f8:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 10:14:31.777 UTC</dateCreated>
+  <dateModified>2021-01-29 07:37:42.413 UTC</dateModified>
+</layer>

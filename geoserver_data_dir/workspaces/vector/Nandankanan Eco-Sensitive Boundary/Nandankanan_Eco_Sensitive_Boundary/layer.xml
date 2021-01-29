@@ -1,0 +1,17 @@
+<layer>
+  <name>Nandankanan_Eco_Sensitive_Boundary</name>
+  <id>LayerInfoImpl--5ceb1e9:17742a00fd6:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--562f553f:177490865f4:-7fe1</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--5ceb1e9:17742a00fd6:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 07:14:36.673 UTC</dateCreated>
+  <dateModified>2021-01-29 09:46:21.30 UTC</dateModified>
+</layer>

@@ -1,0 +1,17 @@
+<layer>
+  <name>University</name>
+  <id>LayerInfoImpl-c3602c:1774375fb64:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--77411324:1774cbca159:-7fcd</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-c3602c:1774375fb64:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 11:01:53.300 UTC</dateCreated>
+  <dateModified>2021-01-29 07:20:00.664 UTC</dateModified>
+</layer>

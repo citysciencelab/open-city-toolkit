@@ -1,0 +1,17 @@
+<layer>
+  <name>Public_and_Semipublic_Use_Zone</name>
+  <id>LayerInfoImpl--f7c101a:177399d326e:-7ffa</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-4771d6ca:17748a3c38d:-7fe4</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--f7c101a:177399d326e:-7ffb</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-25 12:58:11.919 UTC</dateCreated>
+  <dateModified>2021-01-28 12:11:39.548 UTC</dateModified>
+</layer>

@@ -1,0 +1,20 @@
+<dataStore>
+  <id>DataStoreInfoImpl-2dc2df3b:177433d57f8:-7fed</id>
+  <name>Shopping Place</name>
+  <type>GeoPackage</type>
+  <enabled>true</enabled>
+  <workspace>
+    <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
+  </workspace>
+  <connectionParameters>
+    <entry key="Batch insert size">1</entry>
+    <entry key="database">file:data/Shopping_Places.gpkg</entry>
+    <entry key="fetch size">1000</entry>
+    <entry key="passwd">crypt1:dHwrL5OFPRTybrPoYSuQDE4EVRIYZJj6</entry>
+    <entry key="Expose primary keys">false</entry>
+    <entry key="dbtype">geopkg</entry>
+    <entry key="namespace">vector</entry>
+  </connectionParameters>
+  <__default>false</__default>
+  <dateCreated>2021-01-27 10:41:48.670 UTC</dateCreated>
+</dataStore>

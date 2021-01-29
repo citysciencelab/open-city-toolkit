@@ -1,0 +1,17 @@
+<layer>
+  <name>Police_Out_Post</name>
+  <id>LayerInfoImpl--20cdb769:17743209d09:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-3462c5c4:1774c830e68:-7ff9</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--20cdb769:17743209d09:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+  <dateCreated>2021-01-27 09:22:49.69 UTC</dateCreated>
+  <dateModified>2021-01-29 06:46:19.37 UTC</dateModified>
+</layer>

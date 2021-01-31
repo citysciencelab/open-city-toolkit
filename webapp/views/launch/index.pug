@@ -14,6 +14,8 @@ html
     script(src='/lib/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js')
     script(src="betterWMS/L.TileLayer.BetterWMS.js")
     script(src="leaflet.measure/leaflet.measure.js")
+    //- script(src="turf-point/point.js")
+    script(src='https://unpkg.com/@turf/turf/turf.min.js')
 
     style
       include style.css
@@ -33,6 +35,7 @@ html
               select(id='launch-module-menu' class='custom-select custom-select-lg mr-2')
                 option(selected value='time_map') #{t['Calculate time map']}
                 option(value='query') #{t['Query area']}
+                option(value='buffer') #{t['Buffer Module']}
               button(class='btn btn-success btn-lg mr-2' onclick='launchModule()') ▷&nbsp;#{t['Run']}
               button(class='btn btn-light btn-lg' id="result-btn" onclick='showResults()') #{t['Results']}
             li(class="nav-item flex-grow-1")
@@ -88,6 +91,7 @@ html
             switch ($(this).val()) {
               case 'time_map': return "#{t['tooltip:time map']}";
               case 'query': return "#{t['tooltip:query']}";
+              case 'buffer': return "#{t['tooltip:Buffer Module']}";
             }
           },
           trigger: 'manual'

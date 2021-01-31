@@ -37,6 +37,7 @@ app.use('/lib/leaflet-draw', express.static('node_modules/leaflet-draw/dist'));
 app.use('/lib/leaflet-groupedlayercontrol', express.static('node_modules/leaflet-groupedlayercontrol/src'));
 app.use('/betterWMS', express.static('views/map/betterWMS'))
 app.use('/leaflet.measure', express.static('views/map/leafletMeasure'))
+// app.use('/turf-point', express.static('node_modules/turf-point/bin'))
 
 // Views (using Pug template engine)
 app.set('views', './views')

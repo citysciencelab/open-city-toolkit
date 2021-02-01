@@ -277,6 +277,7 @@ function handleResponse(res) {
           items.map(service => {
             innerHTML += `<input type="checkbox" id="${messageId}-input" value='${service.layers}'/><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
+          break;
         }
           // == query module ==
         case 'query.2':

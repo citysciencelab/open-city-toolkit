@@ -819,7 +819,7 @@ const services = [
     group: 'Health'
   },
   {
-    layers: 'Pvt_Health_Clinic',
+    layers: 'Pvt_Hospitals',
     displayName: 'Hospital',
     format: 'image/png',
     transparent: true,
@@ -841,7 +841,7 @@ const services = [
     group: 'Health'
   },
   {
-    layers: 'Pvt_Health_Clinic',
+    layers: 'Other_Health_Facility',
     displayName: 'Other Health Facility',
     format: 'image/png',
     transparent: true,

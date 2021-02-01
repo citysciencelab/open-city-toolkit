@@ -281,7 +281,7 @@ const services = [
   },
   {
     layers: 'Retail_Commercial_and_Bussiness_use_Zone',
-    displayName: 'Retail Commercial and Bussiness use Zone',
+    displayName: 'Retail Commercial and Business use Zone',
     format: 'image/png',
     transparent: true,
     legend: true,

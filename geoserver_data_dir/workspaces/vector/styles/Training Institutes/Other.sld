@@ -5,14 +5,13 @@
       <sld:Name>Default Styler</sld:Name>
       <sld:FeatureTypeStyle>
         <sld:Rule>
-          <sld:Title>gold point</sld:Title>
+          <sld:Title>yellow point</sld:Title>
           <sld:PointSymbolizer>
             <sld:Graphic>
-              <sld:Mark>
-                <sld:Fill>
-                  <sld:CssParameter name="fill">#8b8b00</sld:CssParameter>
-                </sld:Fill>
-              </sld:Mark>
+              <sld:ExternalGraphic>
+                <sld:OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="online-course.png"/>
+                <sld:Format>image/png</sld:Format>
+              </sld:ExternalGraphic>
               <sld:Size>16</sld:Size>
             </sld:Graphic>
           </sld:PointSymbolizer>

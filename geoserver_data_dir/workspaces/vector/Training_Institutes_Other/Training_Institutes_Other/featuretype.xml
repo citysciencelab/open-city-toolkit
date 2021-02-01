@@ -5,7 +5,7 @@
   <namespace>
     <id>NamespaceInfoImpl-53a0964:16fc2624139:-7ffe</id>
   </namespace>
-  <title>Training_Institutes_Other</title>
+  <title>Training Institutes Other</title>
   <keywords>
     <string>features</string>
     <string>Training_Institutes_Other</string>
@@ -37,6 +37,16 @@
   <projectionPolicy>FORCE_DECLARED</projectionPolicy>
   <enabled>true</enabled>
   <metadata>
+    <entry key="elevation">
+      <dimensionInfo>
+        <enabled>false</enabled>
+      </dimensionInfo>
+    </entry>
+    <entry key="time">
+      <dimensionInfo>
+        <enabled>false</enabled>
+      </dimensionInfo>
+    </entry>
     <entry key="cachingEnabled">false</entry>
   </metadata>
   <store class="dataStore">

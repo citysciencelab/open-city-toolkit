@@ -8,10 +8,11 @@
           <sld:Title>Unaccesible areas</sld:Title>
           <sld:PolygonSymbolizer>
             <sld:Fill>
-              <sld:CssParameter name="fill">#2b9348</sld:CssParameter>
+              <sld:CssParameter name="fill">#228B22</sld:CssParameter>
+              <sld:CssParameter name="fill-opacity">0.7</sld:CssParameter>
             </sld:Fill>
             <sld:Stroke>
-              <sld:CssParameter name="stroke">#2b9348</sld:CssParameter>
+              <sld:CssParameter name="stroke">#228B22</sld:CssParameter>
               <sld:CssParameter name="stroke-opacity">0</sld:CssParameter>
             </sld:Stroke>
           </sld:PolygonSymbolizer>

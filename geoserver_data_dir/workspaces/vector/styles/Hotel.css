@@ -1,8 +1,12 @@
-/* @title gold point */
+/* @title yellow point */
 * {
-    mark: symbol(square);
-    mark-size: 16px;
+    mark: symbol(circle);
+    mark-size: 18px;
+    mark: url(bed.png);
+    mark-mime: "image/png";
     :mark {
-        fill: #eed8ae;
+      fill: red;
+      stroke: black;
+      stroke-width: 20px;
     }
 }

@@ -1,8 +1,12 @@
-/* @title gold point */
+/* @title yellow point */
 * {
-    mark: symbol(square);
-    mark-size: 16px;
+    mark: symbol(circle);
+    mark-size: 20px;
+    mark: url(policeman.1.png);
+    mark-mime: "image/png";
     :mark {
-        fill: #6ca6cd;
+      fill: red;
+      stroke: black;
+      stroke-width: 20px;
     }
 }

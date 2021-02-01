@@ -1,8 +1,12 @@
-/* @title gold point */
+/* @title yellow point */
 * {
-    mark: symbol(square);
+    mark: symbol(circle);
     mark-size: 16px;
+    mark: url(online-course.png);
+    mark-mime: "image/png";
     :mark {
-        fill: 	#8b8b00;
+      fill: red;
+      stroke: black;
+      stroke-width: 20px;
     }
 }

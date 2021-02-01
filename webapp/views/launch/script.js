@@ -4,6 +4,7 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
+let buffer_point, buffer_radius
 
 /**
  * Handle incoming messages from backend
@@ -233,7 +234,52 @@ function handleResponse(res) {
           drawnItems.clearLayers();
           break;
 
-        // == query module ==
+        case 'buffer_module.1' : {
+            map.addLayer(selection);
+
+            drawnItems.clearLayers();
+            startDrawCirclemarker();
+
+            buttons = [
+              buttonElement(t['Save']).click(() => {
+                $(`#${messageId}-error`).remove();
+                if (!saveDrawing(res)) {
+                  textarea.append($(`<span id="${messageId}-error" class="validation-error">${t['error:draw point']}</span>`));
+                }
+              }),
+              buttonElement(t['Cancel']).click(() => {
+                reply(res, 'cancel');
+              })
+            ];
+            break;
+        }
+
+        case 'buffer_module.2' : {
+          L.geoJSON(buffer_point).addTo(map);
+          form = formElement(messageId);
+          form.append($(`<input id="${messageId}-input" type="number" />`));
+          form.append($(`<span>&nbsp;m</span>`));
+          buttons = [
+            buttonElement(t['Submit']).click(() => {
+              const input = $(`#${messageId}-input`);
+              buffer_radius = input.val()
+              reply(res, input.val());
+            })
+          ];
+          break;
+        }
+        case 'buffer_module.3' : {
+          var buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
+          L.geoJSON(buffered).addTo(map);
+          const items = services.filter(service => service.type == 'point_layer')
+          form = formElement(messageId);
+          let innerHTML = ""
+          items.map(service => {
+            innerHTML += `<input type="checkbox" id="${messageId}-input" value='${service.layers}'/><label>${service.displayName}</label></br>`}) 
+          lists.append($(`<form>` + innerHTML + `</form>`))
+          break;
+        }
+          // == query module ==
         case 'query.2':
           form = formElement(messageId);
           lists.append($(`<select id="${messageId}-input" class='custom-select' size="10">` + list.map(col => `<option selected value="${col}">${col}</option>`) + `</select>`));
@@ -499,7 +545,14 @@ function cancelDrawing() {
 function launchModule() {
   // Get the selected item
   const value = $('#launch-module-menu')[0].value;
-  if (value) {
+  if(value == 'buffer'){
+    const res = {
+      id: "buffer_module.1",
+      message: "A start point is required. Use the circlemarker tool to draw a start point"
+    }
+    handleResponse(res)
+  }
+  else{
     sendMessage('/launch', { launch: value }, {}, handleResponse);
   }
 }
@@ -512,11 +565,20 @@ function launchSettings(value) {
 }
 
 function reply(res, message) {
+  if(res.id == 'buffer_module.2'){
+    const res = {
+      id : 'buffer_module.3',
+      message : 'select layers'
+    }
+    handleResponse(res)
+  }else{
   sendMessage('/reply', { msg: message }, { messageId: res.id }, handleResponse);
+  }
 }
 
 function saveDrawing(res) {
   const geojson = drawnItems.toGeoJSON();
+  buffer_point = geojson
   if (geojson.features.length === 0) {
     return false;
   }
@@ -554,8 +616,15 @@ function getAttributes(table) {
 
 function sendMessage(target, message, params, callback) {
   $('#loading').show();
-
-  $.ajax({
+if(params.messageId == 'buffer_module.1'){
+  const res = {
+    id: "buffer_module.2",
+    message : "Enter radius in meters"
+  }
+    handleResponse(res)
+}
+  else
+{  $.ajax({
     type: 'POST',
     url: target + '?' + $.param(params),
     data: JSON.stringify(message),
@@ -563,8 +632,9 @@ function sendMessage(target, message, params, callback) {
     contentType: 'application/json; encoding=utf-8',
     error: onServerError
   })
-    .done(res => callback(res).catch(onClientError))
-    .always(() => $('#loading').hide())
+    .done(res => {
+      callback(res).catch(onClientError)})
+    .always(() => $('#loading').hide())}
 }
 
 function get(target, params, callback) {

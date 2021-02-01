@@ -196,5 +196,7 @@
   "Nursing Home": "Nursing Home",
   "Other Health Facility": "Other Health Facility",
   "ASI Boundary": "ASI Boundary",
-  "Protected Area": "Protected Area"
+  "Protected Area": "Protected Area",
+  "Buffer Module": "Buffer Module",
+  "tooltip:Buffer Module": "The 'Buffer Module' lets you ...."
 }

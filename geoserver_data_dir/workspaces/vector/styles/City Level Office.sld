@@ -5,15 +5,14 @@
       <sld:Name>Default Styler</sld:Name>
       <sld:FeatureTypeStyle>
         <sld:Rule>
-          <sld:Title>gold point</sld:Title>
+          <sld:Title>yellow point</sld:Title>
           <sld:PointSymbolizer>
             <sld:Graphic>
-              <sld:Mark>
-                <sld:Fill>
-                  <sld:CssParameter name="fill">#cd96cd</sld:CssParameter>
-                </sld:Fill>
-              </sld:Mark>
-              <sld:Size>16</sld:Size>
+              <sld:ExternalGraphic>
+                <sld:OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="capitol-building.png"/>
+                <sld:Format>image/png</sld:Format>
+              </sld:ExternalGraphic>
+              <sld:Size>20</sld:Size>
             </sld:Graphic>
           </sld:PointSymbolizer>
         </sld:Rule>

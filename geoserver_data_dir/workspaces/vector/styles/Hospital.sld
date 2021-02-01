@@ -9,11 +9,26 @@
           <sld:PointSymbolizer>
             <sld:Graphic>
               <sld:Mark>
+                <sld:WellKnownName>circle</sld:WellKnownName>
                 <sld:Fill>
-                  <sld:CssParameter name="fill">#b4bfb8</sld:CssParameter>
+                  <sld:CssParameter name="fill">#cce698</sld:CssParameter>
+                </sld:Fill>
+                <sld:Stroke>
+                  <sld:CssParameter name="stroke">#cce698</sld:CssParameter>
+                </sld:Stroke>
+              </sld:Mark>
+              <sld:Size>20</sld:Size>
+            </sld:Graphic>
+          </sld:PointSymbolizer>
+          <sld:PointSymbolizer>
+            <sld:Graphic>
+              <sld:Mark>
+                <sld:WellKnownName>cross</sld:WellKnownName>
+                <sld:Fill>
+                  <sld:CssParameter name="fill">#ff0000</sld:CssParameter>
                 </sld:Fill>
               </sld:Mark>
-              <sld:Size>16</sld:Size>
+              <sld:Size>10</sld:Size>
             </sld:Graphic>
           </sld:PointSymbolizer>
         </sld:Rule>

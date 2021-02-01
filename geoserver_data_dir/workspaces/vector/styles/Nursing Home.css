@@ -1,8 +1,15 @@
 /* @title gold point */
 * {
-    mark: symbol(square);
-    mark-size: 16px;
-    :mark {
-        fill: #4876ff;
-    }
+  mark: symbol('circle'), symbol('cross');
+  :nth-mark(1) {
+    size: 20px;
+    fill: #6fa8dc;
+    stroke: #6fa8dc;
+    fill-opacity:1;
+    stroke-opacity:1;
+  };
+  :nth-mark(2) {
+    size: 12px;
+    fill: white;
+  }
 }

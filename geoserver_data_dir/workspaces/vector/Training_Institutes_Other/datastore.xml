@@ -10,11 +10,12 @@
     <entry key="Batch insert size">1</entry>
     <entry key="database">file:data/Training_Institutes_Other.gpkg</entry>
     <entry key="fetch size">1000</entry>
-    <entry key="passwd">crypt1:HeND7C32KVkMq507MJ3av0v3ny0KuJGD</entry>
+    <entry key="passwd">crypt1:bhNAHPqmswGOfHAwSjl6OF2dbUY8Uw43</entry>
     <entry key="Expose primary keys">false</entry>
     <entry key="dbtype">geopkg</entry>
     <entry key="namespace">vector</entry>
   </connectionParameters>
   <__default>false</__default>
   <dateCreated>2021-01-27 11:23:15.824 UTC</dateCreated>
+  <dateModified>2021-01-30 12:53:11.196 UTC</dateModified>
 </dataStore>

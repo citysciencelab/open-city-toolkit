@@ -256,10 +256,6 @@ function handleResponse(res) {
 
         case 'buffer_module.2' : {
           L.geoJSON(buffer_point).addTo(map);
-          // L.circle(buffer_point).addTo(map)
-          // var buffered = turf.buffer(buffer_point, 500, {units: 'kilometers'})
-          // L.geoJSON(buffered).addTo(map);
-          // console.log(buffered,6767)
           form = formElement(messageId);
           form.append($(`<input id="${messageId}-input" type="number" />`));
           form.append($(`<span>&nbsp;m</span>`));
@@ -275,7 +271,12 @@ function handleResponse(res) {
         case 'buffer_module.3' : {
           var buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
           L.geoJSON(buffered).addTo(map);
-          break;
+          const items = services.filter(service => service.type == 'point_layer')
+          form = formElement(messageId);
+          let innerHTML = ""
+          items.map(service => {
+            innerHTML += `<input type="checkbox" id="${messageId}-input" value='${service.layers}'/><label>${service.displayName}</label></br>`}) 
+          lists.append($(`<form>` + innerHTML + `</form>`))
         }
           // == query module ==
         case 'query.2':
@@ -387,7 +388,6 @@ function relationSelect() {
 }
 
 function conditionElement(data, id) {
-  console.log(7687)
   const firstData = data[0]
   const container = $(`<div class='card-body border-info m-0 p-10'></div>`)
   const row1 = $(`<div class='d-flex mb-2' id='${id}'><small>${t['query attribute']}</small></div>`)
@@ -564,7 +564,6 @@ function launchSettings(value) {
 }
 
 function reply(res, message) {
-  console.log('reply', res, message)
   if(res.id == 'buffer_module.2'){
     const res = {
       id : 'buffer_module.3',
@@ -633,7 +632,6 @@ if(params.messageId == 'buffer_module.1'){
     error: onServerError
   })
     .done(res => {
-      console.log(res, message)
       callback(res).catch(onClientError)})
     .always(() => $('#loading').hide())}
 }

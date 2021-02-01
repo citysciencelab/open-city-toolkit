@@ -72,7 +72,7 @@ const modules = {
   "set_selection": new SetSelectionModule(),
   "set_resolution": new SetResolutionModule(),
   "time_map": new TimeMapModule(),
-  "query": new QueryModule()
+  "query": new QueryModule(),
 }
 
 // launch a module

@@ -1,0 +1,12 @@
+arrows.png/* @title yellow point */
+* {
+    mark: symbol(circle);
+    mark-size: 16px;
+    mark: url(arrows.png);
+    mark-mime: "image/png";
+    :mark {
+      fill: red;
+      stroke: black;
+      stroke-width: 20px;
+    }
+}

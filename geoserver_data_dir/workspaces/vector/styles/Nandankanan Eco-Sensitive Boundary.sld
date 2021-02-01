@@ -9,6 +9,7 @@
           <sld:PolygonSymbolizer>
             <sld:Fill>
               <sld:CssParameter name="fill">#9acd32</sld:CssParameter>
+              <sld:CssParameter name="fill-opacity">0.7</sld:CssParameter>
             </sld:Fill>
             <sld:Stroke>
               <sld:CssParameter name="stroke">#9acd32</sld:CssParameter>

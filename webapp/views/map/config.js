@@ -281,7 +281,7 @@ const services = [
   },
   {
     layers: 'Retail_Commercial_and_Bussiness_use_Zone',
-    displayName: 'Retail Commercial and Bussiness use Zone',
+    displayName: 'Retail Commercial and Business use Zone',
     format: 'image/png',
     transparent: true,
     legend: true,
@@ -842,7 +842,7 @@ const services = [
     layer_type : 'point_layer'
   },
   {
-    layers: 'Pvt_Health_Clinic',
+    layers: 'Pvt_Hospitals',
     displayName: 'Hospital',
     format: 'image/png',
     transparent: true,
@@ -866,7 +866,7 @@ const services = [
     layer_type : 'point_layer'
   },
   {
-    layers: 'Pvt_Health_Clinic',
+    layers: 'Other_Health_Facility',
     displayName: 'Other Health Facility',
     format: 'image/png',
     transparent: true,

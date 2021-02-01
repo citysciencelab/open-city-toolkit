@@ -1,8 +1,14 @@
-/* @title gold point */
+/* @title yellow point */
 * {
-    mark: symbol(square);
-    mark-size: 16px;
+    mark: symbol(circle);
+    mark-size: 20px;
+    mark: url(closed-mail-envelope.png);
+    mark-mime: "image/png";
+    fill: #e06666;
+
     :mark {
-        fill: #fa8072;
+      fill: red;
+      stroke: black;
+      stroke-width: 20px;
     }
 }

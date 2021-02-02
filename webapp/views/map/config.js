@@ -568,7 +568,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 1
   },
   {
     layers: 'Police_Out_Post',
@@ -579,7 +580,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 2
   },
 
     //---> Post Office group layers 
@@ -592,7 +594,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 3
   },
   {
     layers: 'Branch_Post_Offices',
@@ -603,7 +606,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id : 4
   },
   {
     layers: 'Sub_Post_Offices',
@@ -614,7 +618,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 5
   },
   //Community Services 
   {
@@ -626,7 +631,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 6
   },
   {
     layers: 'Hotels',
@@ -637,7 +643,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 7
   },
   {
     layers: 'Resturants',
@@ -648,7 +655,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 8
   },
   {
     layers: 'Petrol_Pumps',
@@ -659,7 +667,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 9
   },
   {
     layers: 'Community_Centers',
@@ -670,7 +679,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services', 
+    id: 10
   },
   {
     layers: 'Shopping_Places',
@@ -681,7 +691,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 11
   },
   {
     layers: 'Fire_Stations',
@@ -692,7 +703,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 12
   },
   {
     layers: 'Telepohone_Exchange',
@@ -703,7 +715,8 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services'
+    group: 'Community Services',
+    id: 13
   },
   //  Educational group layers
   {

@@ -275,7 +275,7 @@ function handleResponse(res) {
           form = formElement(messageId);
           let innerHTML = ""
           items.map(service => {
-            innerHTML += `<input type="checkbox" id="${messageId}-input" value='${service.layers}'/><label>${service.displayName}</label></br>`}) 
+            innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}'/><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
           break;
         }

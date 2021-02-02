@@ -4,13 +4,26 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
-let buffer_point, buffer_radius
-
+let buffer_point, buffer_radius, arr=[], buffered
 /**
  * Handle incoming messages from backend
  * @param {object} res backend response
  * @return Promise resolving if the message is processed successfully
  */
+function handleClick(name, checkbox){
+  // if(checkbox.checked){
+  //   arr.push(name)
+  // }
+  // else if(!checkbox.checked){
+  //   arr = arr.filter(item => item != name)
+  // }
+  const points = jsonData.filter(layer => layer.name == name)
+  // console.log(data_to_display,8)
+  var ptsWithin = turf.pointsWithinPolygon(points, buffered);
+  console.log(ptsWithin,7878, points,buffered )
+  L.geoJSON(ptsWithin).addTo(map);
+
+}
 function handleResponse(res) {
   return new Promise((resolve) => {
     clearDialog();
@@ -269,13 +282,13 @@ function handleResponse(res) {
           break;
         }
         case 'buffer_module.3' : {
-          var buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
+          buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
           L.geoJSON(buffered).addTo(map);
           const items = services.filter(service => service.group == 'Community Services')
           form = formElement(messageId);
           let innerHTML = ""
           items.map(service => {
-            innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
+            innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='handleClick("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
           break;
         }

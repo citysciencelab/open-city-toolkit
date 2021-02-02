@@ -271,7 +271,7 @@ function handleResponse(res) {
         case 'buffer_module.3' : {
           var buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
           L.geoJSON(buffered).addTo(map);
-          const items = services.filter(service => service.type == 'point_layer')
+          const items = services.filter(service => service.group == 'Community Services')
           form = formElement(messageId);
           let innerHTML = ""
           items.map(service => {
@@ -568,7 +568,7 @@ function reply(res, message) {
   if(res.id == 'buffer_module.2'){
     const res = {
       id : 'buffer_module.3',
-      message : 'select layers'
+      message : 'Select Layers'
     }
     handleResponse(res)
   }else{

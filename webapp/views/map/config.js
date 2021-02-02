@@ -568,8 +568,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Police_Out_Post',
@@ -580,8 +579,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
 
     //---> Post Office group layers 
@@ -594,8 +592,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Branch_Post_Offices',
@@ -606,8 +603,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Sub_Post_Offices',
@@ -618,8 +614,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   //Community Services 
   {
@@ -631,8 +626,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Hotels',
@@ -643,8 +637,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Resturants',
@@ -655,8 +648,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Petrol_Pumps',
@@ -667,8 +659,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Community_Centers',
@@ -679,8 +670,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Shopping_Places',
@@ -691,8 +681,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Fire_Stations',
@@ -703,8 +692,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   {
     layers: 'Telepohone_Exchange',
@@ -715,8 +703,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Community Services',
-    layer_type : 'point_layer'
+    group: 'Community Services'
   },
   //  Educational group layers
   {
@@ -728,8 +715,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Educational',
-    layer_type : 'point_layer'
+    group: 'Educational'
   },
   {
     layers: 'School_OPEPA_DISE School_OPEPE_DISE',
@@ -740,8 +726,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Educational',
-    layer_type : 'point_layer'
+    group: 'Educational'
   },
   {
     layers: 'Colleges',
@@ -752,8 +737,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Educational',
-    layer_type : 'point_layer'
+    group: 'Educational'
   },
   {
     layers: 'Anganwadi_Centre',
@@ -764,8 +748,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Educational',
-    layer_type : 'point_layer'
+    group: 'Educational'
   },
   {
     layers: 'Learning_Point',
@@ -776,8 +759,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Educational',
-    layer_type : 'point_layer'
+    group: 'Educational'
   },
   {
     layers: 'Training_Institutes_Other',
@@ -788,8 +770,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Educational',
-    layer_type : 'point_layer'
+    group: 'Educational'
   },
   //Government Office group layers
   {
@@ -801,8 +782,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Government Office',
-    layer_type : 'point_layer'
+    group: 'Government Office'
   },
   {
     layers: 'State_Government_Offices',
@@ -813,8 +793,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Government Office',
-    layer_type : 'point_layer'
+    group: 'Government Office'
   },
   {
     layers: 'City_Level_Offices',
@@ -825,8 +804,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Government Office',
-    layer_type : 'point_layer'
+    group: 'Government Office'
   },
   //  Health group layers
   {
@@ -838,8 +816,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Health',
-    layer_type : 'point_layer'
+    group: 'Health'
   },
   {
     layers: 'Pvt_Hospitals',
@@ -850,8 +827,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Health',
-    layer_type : 'point_layer'
+    group: 'Health'
   },
   {
     layers: 'Pvt._Nursing_Home_Pvt',
@@ -862,8 +838,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Health',
-    layer_type : 'point_layer'
+    group: 'Health'
   },
   {
     layers: 'Other_Health_Facility',
@@ -874,8 +849,7 @@ const services = [
     maxZoom: 20,
     minZoom: 1,
     type: 'vector',
-    group: 'Health',
-    layer_type : 'point_layer'
+    group: 'Health'
   },
   //  ASI Boundary group layers
   {

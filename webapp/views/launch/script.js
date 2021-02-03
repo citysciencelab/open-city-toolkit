@@ -4,24 +4,24 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
-let buffer_point, buffer_radius, arr=[], buffered
+let buffer_point, buffer_radius, display_layers=[], buffered
 /**
  * Handle incoming messages from backend
  * @param {object} res backend response
  * @return Promise resolving if the message is processed successfully
  */
-function handleClick(name, checkbox){
-  // if(checkbox.checked){
-  //   arr.push(name)
-  // }
-  // else if(!checkbox.checked){
-  //   arr = arr.filter(item => item != name)
-  // }
-  const points = jsonData.filter(layer => layer.name == name)
-  // console.log(data_to_display,8)
-  var ptsWithin = turf.pointsWithinPolygon(points, buffered);
-  console.log(ptsWithin,7878, points,buffered )
-  L.geoJSON(ptsWithin).addTo(map);
+function handleClick(name, element){
+  if(element.checked){
+    const checked_layers = jsonData.filter(layer => layer.name == name)
+    display_layers.push(checked_layers[0])
+  }
+  else if(!element.checked){
+    display_layers = display_layers.filter(layer => layer.name != name)
+  }
+  display_layers.map(layer => {
+    var ptsWithin = turf.pointsWithinPolygon(layer, buffered)
+    L.geoJSON(ptsWithin).addTo(map);
+  })
 
 }
 function handleResponse(res) {

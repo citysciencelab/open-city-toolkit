@@ -11,17 +11,14 @@ let buffer_point, buffer_radius, display_layers=[], buffered
  * @return Promise resolving if the message is processed successfully
  */
 function handleClick(name, element){
+  const layer = jsonData.filter(layer => layer.name == name)
+  var ptsWithin = turf.pointsWithinPolygon(layer[0], buffered)
   if(element.checked){
-    const checked_layers = jsonData.filter(layer => layer.name == name)
-    display_layers.push(checked_layers[0])
+    L.geoJSON(ptsWithin).addTo(map)
   }
-  else if(!element.checked){
-    display_layers = display_layers.filter(layer => layer.name != name)
+  else{
+    
   }
-  display_layers.map(layer => {
-    var ptsWithin = turf.pointsWithinPolygon(layer, buffered)
-    L.geoJSON(ptsWithin).addTo(map);
-  })
 
 }
 function handleResponse(res) {

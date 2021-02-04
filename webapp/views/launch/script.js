@@ -14,13 +14,28 @@ function handleClick(name, element){
   const layer = jsonData.filter(layer => layer.name == name)
   var ptsWithin = turf.pointsWithinPolygon(layer[0], buffered)
   if(element.checked){
-    L.geoJSON(ptsWithin).addTo(map)
+    var layer_icon = L.icon({
+      iconUrl: handleIcon(layer[0].name),
+      iconSize: [17,23],
+      iconAnchor: [9, 13],
+      popupAnchor: [0, -28]
+    });
+    L.geoJSON(ptsWithin, {
+      pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {icon: layer_icon});
+      }
+    }).addTo(map)
   }
   else{
     
   }
-
 }
+
+function handleIcon(layer_name){
+    const url = `images/${layer_name}.png`
+    return url
+}
+
 function handleResponse(res) {
   return new Promise((resolve) => {
     clearDialog();

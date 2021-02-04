@@ -10,7 +10,7 @@ let buffer_point, buffer_radius, display_layers=[], buffered
  * @param {object} res backend response
  * @return Promise resolving if the message is processed successfully
  */
-function handleClick(name, element){
+function onLayerToggle(name, element){
   const layer = jsonData.filter(layer => layer.name == name)
   var ptsWithin = turf.pointsWithinPolygon(layer[0], buffered)
   if(element.checked){
@@ -300,7 +300,7 @@ function handleResponse(res) {
           form = formElement(messageId);
           let innerHTML = ""
           items.map(service => {
-            innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='handleClick("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
+            innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='onLayerToggle("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
           break;
         }

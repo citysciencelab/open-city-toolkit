@@ -4,7 +4,7 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
-let buffer_point, buffer_radius, display_layers=[], buffered, buffered_layers=[]
+let buffer_point, buffer_radius, buffered, buffered_layers=[]
 /**
  * Handle incoming messages from backend
  * @param {object} res backend response
@@ -29,7 +29,8 @@ function onLayerToggle(name, element){
     buffered_layers.push(buffer_layer)
   }
   else{
-    const a = buffered_layers.filter(layer => layer.id == name)
+    const remove_buffer = buffered_layers.filter(layer => layer.id == name)
+    map.removeLayer(remove_buffer[0])
   }
 }
 

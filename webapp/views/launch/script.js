@@ -4,7 +4,7 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
-let buffer_point, buffer_radius, display_layers=[], buffered
+let buffer_point, buffer_radius, display_layers=[], buffered, buffered_layers=[]
 /**
  * Handle incoming messages from backend
  * @param {object} res backend response
@@ -20,20 +20,28 @@ function onLayerToggle(name, element){
       iconAnchor: [9, 13],
       popupAnchor: [0, -28]
     });
-    L.geoJSON(ptsWithin, {
+    const buffer_layer = L.geoJSON(ptsWithin, {
       pointToLayer: function (feature, latlng) {
         return L.marker(latlng, {icon: layer_icon});
       }
     }).addTo(map)
+    buffer_layer['id'] = name
+    buffered_layers.push(buffer_layer)
   }
   else{
-    
+    const a = buffered_layers.filter(layer => layer.id == name)
   }
 }
 
 function handleIcon(layer_name){
+  if(layer_name == 'Police_Out_Post' || layer_name == 'Police_Stations'){
+    const url = `images/Police.png`
+    return url
+  }
+  else{
     const url = `images/${layer_name}.png`
     return url
+  }
 }
 
 function handleResponse(res) {

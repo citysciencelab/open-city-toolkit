@@ -4,26 +4,46 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
-let buffer_point, buffer_radius, display_layers=[], buffered
+let buffer_point, buffer_radius, display_layers=[], buffered, buffered_layers=[]
 /**
  * Handle incoming messages from backend
  * @param {object} res backend response
  * @return Promise resolving if the message is processed successfully
  */
-function handleClick(name, element){
+function onLayerToggle(name, element){
+  const layer = jsonData.filter(layer => layer.name == name)
+  var ptsWithin = turf.pointsWithinPolygon(layer[0], buffered)
   if(element.checked){
-    const checked_layers = jsonData.filter(layer => layer.name == name)
-    display_layers.push(checked_layers[0])
+    var layer_icon = L.icon({
+      iconUrl: handleIcon(layer[0].name),
+      iconSize: [17,23],
+      iconAnchor: [9, 13],
+      popupAnchor: [0, -28]
+    });
+    const buffer_layer = L.geoJSON(ptsWithin, {
+      pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, {icon: layer_icon});
+      }
+    }).addTo(map)
+    buffer_layer['id'] = name
+    buffered_layers.push(buffer_layer)
   }
-  else if(!element.checked){
-    display_layers = display_layers.filter(layer => layer.name != name)
+  else{
+    const a = buffered_layers.filter(layer => layer.id == name)
   }
-  display_layers.map(layer => {
-    var ptsWithin = turf.pointsWithinPolygon(layer, buffered)
-    L.geoJSON(ptsWithin).addTo(map);
-  })
-
 }
+
+function handleIcon(layer_name){
+  if(layer_name == 'Police_Out_Post' || layer_name == 'Police_Stations'){
+    const url = `images/Police.png`
+    return url
+  }
+  else{
+    const url = `images/${layer_name}.png`
+    return url
+  }
+}
+
 function handleResponse(res) {
   return new Promise((resolve) => {
     clearDialog();
@@ -288,7 +308,7 @@ function handleResponse(res) {
           form = formElement(messageId);
           let innerHTML = ""
           items.map(service => {
-            innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='handleClick("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
+            innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='onLayerToggle("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
           break;
         }

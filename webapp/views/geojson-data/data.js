@@ -390,7 +390,7 @@ const jsonData = [
     },
     {
         "type": "FeatureCollection",
-        "name": "School_OPEPE_DISE",
+        "name": "School_OPEPA_DISE School_OPEPE_DISE",
         "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
         "features": [
         { "type": "Feature", "properties": { "OBJECTID": 2, "Sl_no": 2.0, "School_Name": "Damana U G U P S", "Total_Students": 308.0, "School_ID": 21171300102.0, "Cluster_Name": "DAMANA U G U P S", "Block_name": "BHUBANESWAR MC", "Village_Name": "WARD NO. 03", "Category": "Primary with Upper Primary", "Address": "Ward No. 01,  Damana U G U P S, Bhubaneswar Mc", "Management": "Department of Education", "Area_Pincode": 751016.0, "Year_of_Establishment": 1991.0, "Rura_Urban": "urban", "Total_Teachers": 8.0, "Principal_name": "Alok Manjari Pattnaik", "Contact_No": 9438298757.0, "Email_ID": null, "Latitude": 20.33253729, "Longitude": 85.82720356 }, "geometry": { "type": "Point", "coordinates": [ 85.827203555877276, 20.332537290559788 ] } },
@@ -1236,7 +1236,7 @@ const jsonData = [
     },
     {
         "type": "FeatureCollection",
-        "name": "Pvt Hospitals",
+        "name": "Pvt_Hospitals",
         "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
         "features": [
         { "type": "Feature", "properties": { "Object Id": 15, "Sl no": 77.0, "Name": "Multicare Homeopathy Treatment Center", "Category": "PRIVATE", "Category_type": "HOSPITAL", "System": "Homeopathy", "Address": "HIG - 4\/2, Housing Board Colony, Chandrasekharpur, Bhubaneswar, Odisha 751016", "Emergency": 0.0, "Ambulance": 0.0, "Contact_number": "9937412150", "e_mail_id": " ", "website": "www.multicarehomeopathy.com", "speciality": "Multy", "total_number of Beds": 0.0, "Availability": 0.0, "latitude": 20.32794167, "longitude": 85.82053333 }, "geometry": { "type": "Point", "coordinates": [ 85.820533333515385, 20.327941666358317 ] } },
@@ -1270,7 +1270,7 @@ const jsonData = [
     },
     {
         "type": "FeatureCollection",
-        "name": "Pvt Health Clinic",
+        "name": "Pvt_Health_Clinic",
         "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
         "features": [
         { "type": "Feature", "properties": { "Object ID": 1, "Sl no": 63.0, "Name": "Radiance Hair Transplant", "Category": "PRIVATE", "Category_type": "Clinic", "System": "ALLOPATHIC", "Address": "46, N1, Block N1, IRC Village, Nayapalli, Bhubaneswar, Odisha 751015", "Emergency": 0.0, "Ambulance": 0.0, "contact_number": "09238122550 \/ 0674 - 2552550", "e_mail_id": "radiance.clinics@gmail.com", "website": "www.radiancehairclinics.com", "Speciality": "Hair", "total_number of beds": 0.0, "availability": 0.0, "latitude": 20.28746389, "longitude": 85.80941111 }, "geometry": { "type": "Point", "coordinates": [ 85.809411111039552, 20.287463888640143 ] } },
@@ -1314,7 +1314,7 @@ const jsonData = [
     },
     {
         "type": "FeatureCollection",
-        "name": "Pvt",
+        "name": "Pvt._Nursing_Home_Pvt",
         "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
         "features": [
         { "type": "Feature", "properties": { "Object ID": 43, "Sl no": 105.0, "Name": "Swarna Nursing Home", "Category": "PRIVATE", "Category_type": "Nursing Home", "System": "ALLOPATHIC", "Address": "1\/41, IRC Village, N1, Block N1, IRC Village, Nayapalli, Bhubaneswar, Odisha 751015", "Emergency": 0.0, "Ambulance": 0.0, "Contact_number": "0674 - 2550388", "e_mail_id": " ", "Website": " ", "Speciality": " ", "Total_number of Beds": 0.0, "Availability": 0.0, "latitude": 20.2877, "longitude": 85.80985556 }, "geometry": { "type": "Point", "coordinates": [ 85.809855555088333, 20.287700000432611 ] } },
@@ -1330,7 +1330,7 @@ const jsonData = [
     },
     {
         "type": "FeatureCollection",
-        "name": "Other Health Facility",
+        "name": "Other_Health_Facility",
         "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
         "features": [
         { "type": "Feature", "properties": { "Object ID": 6, "Sl no": 7.0, "Name": "Bapu Opticals", "Category": "PRIVATE", "Category_type": "OTHER", "System": " ", "Address": "B-36, Near Rupali Chhak, Sahid Nagar, Bhubaneswar, Odisha 751007", "Emergency": 0.0, "Ambulance": 0.0, "Contact_number": "9437065125", "E_mail_id": " ", "Website": " ", "Speciality": "EYE", "Total_number of Beds": 0.0, "Availability": 0.0, "Latitude": 20.28974879, "Longitude": 85.84382496000001 }, "geometry": { "type": "Point", "coordinates": [ 85.843824957592872, 20.28974878798261 ] } },

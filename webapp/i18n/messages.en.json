@@ -197,6 +197,6 @@
   "Other Health Facility": "Other Health Facility",
   "ASI Boundary": "ASI Boundary",
   "Protected Area": "Protected Area",
-  "Buffer Module": "Buffer Module",
-  "tooltip:Buffer Module": "The 'Buffer Module' lets you ...."
+  "Buffer Module": "Buffer Query",
+  "tooltip:Buffer Module": "The 'Buffer Query' module lets you query the points of interest in a specified buffer radius from a location selected on the map."
 }

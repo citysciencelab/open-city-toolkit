@@ -305,6 +305,7 @@ function handleResponse(res) {
         }
         case 'buffer_module.3' : {
           buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
+          drawnItems.clearLayers();
           L.geoJSON(buffered).addTo(map);
           const items = services.filter(service => service.buffered)
           form = formElement(messageId);

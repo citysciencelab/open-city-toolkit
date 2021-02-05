@@ -16,8 +16,8 @@ function onLayerToggle(name, element){
   if(element.checked){
     var layer_icon = L.icon({
       iconUrl: handleIcon(layer[0].name),
-      iconSize: [17,23],
-      iconAnchor: [9, 13],
+      iconSize: [32,37],
+      iconAnchor: [16, 37],
       popupAnchor: [0, -28]
     });
     const buffer_layer = L.geoJSON(ptsWithin, {
@@ -290,7 +290,7 @@ function handleResponse(res) {
         }
 
         case 'buffer_module.2' : {
-          L.geoJSON(buffer_point).addTo(map);
+          // L.geoJSON(buffer_point).addTo(map);
           form = formElement(messageId);
           form.append($(`<input id="${messageId}-input" type="number" />`));
           form.append($(`<span>&nbsp;m</span>`));

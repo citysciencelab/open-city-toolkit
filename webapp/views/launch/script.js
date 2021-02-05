@@ -31,6 +31,7 @@ function onLayerToggle(name, element){
   else{
     const remove_buffer = buffered_layers.filter(layer => layer.id == name)
     map.removeLayer(remove_buffer[0])
+    buffered_layers=  buffered_layers.filter(layer => layer.id != name)
   }
 }
 

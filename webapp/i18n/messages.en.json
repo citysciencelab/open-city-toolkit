@@ -198,5 +198,6 @@
   "ASI Boundary": "ASI Boundary",
   "Protected Area": "Protected Area",
   "Buffer Module": "Buffer Query",
-  "tooltip:Buffer Module": "The 'Buffer Query' module lets you query the points of interest in a specified buffer radius from a location selected on the map."
+  "tooltip:Buffer Module": "The 'Buffer Query' module lets you query the points of interest in a specified buffer radius from a location selected on the map.",
+  "Buffer Results" : "Buffer Results"
 }

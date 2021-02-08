@@ -205,3 +205,15 @@ body {
 .tooltip-inner {
   max-width: 300px;
 }
+
+.center{
+  margin: auto;
+  width:32%;
+}
+
+[leaflet-browser-print-pages] {
+  display: none;
+}
+.pages-print-container [leaflet-browser-print-pages] {
+  display: block;
+}

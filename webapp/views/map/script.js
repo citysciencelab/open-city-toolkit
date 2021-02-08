@@ -5,6 +5,7 @@ const map = new L.Map('map', {
   zoom: 13,
   minZoom: 4,
   touchZoom: true,
+  renderer: L.canvas()
 });
 
 map.doubleClickZoom.disable(); 
@@ -112,3 +113,7 @@ function refreshLayer(layer) {
 function createWms(service) {
   return service.type === 'vector' ? L.tileLayer.betterWms(vectorWMS, service) : L.tileLayer.betterWms(rasterWMS, service)
 }
+// document.querySelector("#custom_print_button").addEventListener("click", function(){
+//   var modeToUse = L.control.browserPrint.mode.auto();
+//   map.printControl.print(modeToUse);
+// });

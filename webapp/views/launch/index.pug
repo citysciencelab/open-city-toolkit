@@ -14,8 +14,8 @@ html
     script(src='/lib/leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js')
     script(src="betterWMS/L.TileLayer.BetterWMS.js")
     script(src="leaflet.measure/leaflet.measure.js")
-    //- script(src="turf-point/point.js")
     script(src='https://unpkg.com/@turf/turf/turf.min.js')
+    script(src="leaflet.browser.print/leaflet.browser.print.min.js")
 
     style
       include style.css
@@ -79,6 +79,9 @@ html
     div(id='help-modal' class='modal-background')
       include ../help-modal/index.pug
 
+    div(id='buffer-model-result' class='modal-background')
+      include ../buffer-result/index.pug 
+      
     div(id='table-attributes-modal' class='modal-background')
       include ../table-attributes-modal/index.pug
 
@@ -114,3 +117,4 @@ html
       include ../results-modal/script.js
       include ../help-modal/script.js
       include ../table-attributes-modal/script.js
+      include ../buffer-result/script.js

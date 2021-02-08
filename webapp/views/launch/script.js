@@ -313,6 +313,13 @@ function handleResponse(res) {
           items.map(service => {
             innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='onLayerToggle("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
+          buttons = [
+            buttonElement(t['Submit']).click(() => {
+              // var modeToUse = L.control.browserPrint.mode.auto();
+              // map.printControl.print(modeToUse);
+              showBuffer(buffered_layers)
+            })
+          ];
           break;
         }
           // == query module ==
@@ -416,6 +423,7 @@ function formElement(id, isMultipart) {
 }
 
 function buttonElement(action) {
+  console.log(action)
   return $(`<button type="button" class="btn btn-primary">${action}</button>`);
 }
 
@@ -541,7 +549,26 @@ function showResults() {
 function showHelp() {
   $('#help-modal').show()
 }
-
+function showBuffer(buffered_layers){
+  let html = "<table leaflet-browser-print-pages><tbody>";
+  buffered_layers.map(layer => {
+    const number_of_point_layers = Object.keys(layer._layers).length
+    html += "<tr><td>" + layer['id']+ "</td>"
+    html += "<td>"+ number_of_point_layers +  "</td></tr>"
+  })
+  html = html + "</tbody></table>";
+  $('#buffer-model-result').show()
+  $('#buffer-output').html(html)
+  const options = {
+    printModes: [
+      "Portrait",
+    ],
+    // manualMode : true,
+    // contentSelector: "[leaflet-browser-print-content]"
+  }
+  console.log(options, options.contentSelector)
+  L.control.browserPrint(options).addTo(map)
+}
 let blinkTimeout;
 // eslint-disable-next-line no-unused-vars
 function blink(selector) {

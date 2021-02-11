@@ -305,6 +305,7 @@ function handleResponse(res) {
         }
         case 'buffer_module.3' : {
           buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
+          drawnItems.clearLayers();
           L.geoJSON(buffered).addTo(map);
           const items = services.filter(service => service.buffered)
           form = formElement(messageId);
@@ -312,6 +313,20 @@ function handleResponse(res) {
           items.map(service => {
             innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='onLayerToggle("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
+          buttons = [
+            buttonElement(t['Submit'], 'leaflet-browser-print--manualMode-button').click(() => {
+              showBuffer(buffered_layers)
+              const options = {
+                printModes: [
+                  L.control.browserPrint.mode.auto("Automatico", "A6"),
+                ],
+                manualMode: true
+              }
+              L.control.browserPrint(options).addTo(map)
+              var modeToUse = L.control.browserPrint.mode.auto("Automatico", "A6");
+              map.printControl.print(modeToUse);
+            })
+          ];
           break;
         }
           // == query module ==
@@ -414,8 +429,8 @@ function formElement(id, isMultipart) {
   return $(`<form id="${id}-form" enctype="${isMultipart ? 'multipart/form-data' : ''}" onsubmit="event.preventDefault()"></form>`);
 }
 
-function buttonElement(action) {
-  return $(`<button type="button" class="btn btn-primary">${action}</button>`);
+function buttonElement(action, id) {
+  return $(`<button type="button" class="btn btn-primary" id=${id}>${action}</button>`);
 }
 
 function relationSelect() {
@@ -539,6 +554,17 @@ function showResults() {
 // eslint-disable-next-line no-unused-vars
 function showHelp() {
   $('#help-modal').show()
+}
+
+function showBuffer(buffered_layers){
+  let html = "<tbody>";
+  buffered_layers.map(layer => {
+    const number_of_point_layers = Object.keys(layer._layers).length
+    html += "<tr><td>" + layer['id']+ "</td>"
+    html += "<td>"+ number_of_point_layers +  "</td></tr>"
+  })
+  html = html + "</tbody>";
+  $('#buffer-output').html(html)
 }
 
 let blinkTimeout;

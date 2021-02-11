@@ -19,6 +19,7 @@
     "leaflet-draw": "^1.0.4",
     "leaflet-groupedlayercontrol": "^0.6.1",
     "leaflet-measure": "^3.1.0",
+    "leaflet.browser.print": "^1.0.6",
     "multer": "^1.4.2",
     "pug": "^3.0.0",
     "turf-point": "^2.0.1"

@@ -314,10 +314,17 @@ function handleResponse(res) {
             innerHTML += `<input type="checkbox" id="${service.id}-input" value='${service.layers}' onchange='onLayerToggle("${service.layers}", this)'}'/><span>&nbsp</span><label>${service.displayName}</label></br>`}) 
           lists.append($(`<form>` + innerHTML + `</form>`))
           buttons = [
-            buttonElement(t['Submit']).click(() => {
-              // var modeToUse = L.control.browserPrint.mode.auto();
-              // map.printControl.print(modeToUse);
+            buttonElement(t['Submit'], 'leaflet-browser-print--manualMode-button').click(() => {
               showBuffer(buffered_layers)
+              const options = {
+                printModes: [
+                  L.control.browserPrint.mode.auto("Automatico", "A6"),
+                ],
+                manualMode: true
+              }
+              L.control.browserPrint(options).addTo(map)
+              var modeToUse = L.control.browserPrint.mode.auto("Automatico", "A6");
+              map.printControl.print(modeToUse);
             })
           ];
           break;
@@ -422,8 +429,8 @@ function formElement(id, isMultipart) {
   return $(`<form id="${id}-form" enctype="${isMultipart ? 'multipart/form-data' : ''}" onsubmit="event.preventDefault()"></form>`);
 }
 
-function buttonElement(action) {
-  return $(`<button type="button" class="btn btn-primary">${action}</button>`);
+function buttonElement(action, id) {
+  return $(`<button type="button" class="btn btn-primary" id=${id}>${action}</button>`);
 }
 
 function relationSelect() {
@@ -548,6 +555,7 @@ function showResults() {
 function showHelp() {
   $('#help-modal').show()
 }
+
 function showBuffer(buffered_layers){
   let html = "<tbody>";
   buffered_layers.map(layer => {
@@ -557,13 +565,8 @@ function showBuffer(buffered_layers){
   })
   html = html + "</tbody>";
   $('#buffer-output').html(html)
-  const options = {
-    printModes: [
-      L.control.browserPrint.mode.auto("Automatico", "A6"),
-    ],
-  }
-  L.control.browserPrint(options).addTo(map)
 }
+
 let blinkTimeout;
 // eslint-disable-next-line no-unused-vars
 function blink(selector) {

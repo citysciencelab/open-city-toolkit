@@ -231,3 +231,7 @@ body {
 .grid-print-container > .sub-content {
   color: white;
 }
+
+.leaflet-control-browser-print {
+  display: none !important;
+}

@@ -423,7 +423,6 @@ function formElement(id, isMultipart) {
 }
 
 function buttonElement(action) {
-  console.log(action)
   return $(`<button type="button" class="btn btn-primary">${action}</button>`);
 }
 
@@ -550,23 +549,19 @@ function showHelp() {
   $('#help-modal').show()
 }
 function showBuffer(buffered_layers){
-  let html = "<table leaflet-browser-print-pages><tbody>";
+  let html = "<tbody>";
   buffered_layers.map(layer => {
     const number_of_point_layers = Object.keys(layer._layers).length
     html += "<tr><td>" + layer['id']+ "</td>"
     html += "<td>"+ number_of_point_layers +  "</td></tr>"
   })
-  html = html + "</tbody></table>";
-  $('#buffer-model-result').show()
+  html = html + "</tbody>";
   $('#buffer-output').html(html)
   const options = {
     printModes: [
-      "Portrait",
+      L.control.browserPrint.mode.auto("Automatico", "A6"),
     ],
-    // manualMode : true,
-    // contentSelector: "[leaflet-browser-print-content]"
   }
-  console.log(options, options.contentSelector)
   L.control.browserPrint(options).addTo(map)
 }
 let blinkTimeout;

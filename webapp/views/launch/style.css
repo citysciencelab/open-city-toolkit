@@ -211,9 +211,23 @@ body {
   width:32%;
 }
 
+/* Buffer-result */
 [leaflet-browser-print-pages] {
   display: none;
 }
 .pages-print-container [leaflet-browser-print-pages] {
   display: block;
+}
+
+.grid-print-container {
+  grid-template: auto 1fr auto / 1fr;
+  background-color: orange;
+}
+.grid-map-print {
+  grid-row: 2;
+}
+
+.grid-print-container > .title,
+.grid-print-container > .sub-content {
+  color: white;
 }

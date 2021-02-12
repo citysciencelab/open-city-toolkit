@@ -4,7 +4,7 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
-let buffer_point, buffer_radius, buffered, buffered_layers=[]
+let buffer_point, buffer_radius, buffered, buffered_layers=[], buffer_layer_remove=null
 /**
  * Handle incoming messages from backend
  * @param {object} res backend response
@@ -270,6 +270,10 @@ function handleResponse(res) {
           break;
 
         case 'buffer_module.1' : {
+          if(buffer_layer_remove){
+            map.removeLayer(buffer_layer_remove)
+          }
+         
             map.addLayer(selection);
 
             drawnItems.clearLayers();
@@ -306,7 +310,11 @@ function handleResponse(res) {
         case 'buffer_module.3' : {
           buffered = turf.buffer(buffer_point, buffer_radius, {units: 'meters'})
           drawnItems.clearLayers();
-          L.geoJSON(buffered).addTo(map);
+          buffer_layer_remove = L.geoJSON(buffered, {
+            pointToLayer: function (feature, latlng) {
+              return L.circle(latlng)
+            }
+          }).addTo(map)
           const items = services.filter(service => service.buffered)
           form = formElement(messageId);
           let innerHTML = ""

@@ -331,7 +331,7 @@ function handleResponse(res) {
                 printModes: [
                   L.control.browserPrint.mode.auto("Automatico", "A6"),
                 ],
-                manualMode: true
+                manualMode: false
               }
               L.control.browserPrint(options).addTo(map)
               var modeToUse = L.control.browserPrint.mode.auto("Automatico", "A6");
@@ -640,7 +640,14 @@ function launchSettings(value) {
 }
 
 function reply(res, message) {
-  if(res.id == 'buffer_module.2'){
+  if(res.id == 'buffer_module.1'){
+    const res = {
+      id : 'buffer_module.4',
+      message : 'Process Cancelled.'
+    }
+    handleResponse(res)
+  }
+  else if(res.id == 'buffer_module.2'){
     const res = {
       id : 'buffer_module.3',
       message : 'Select Layers'

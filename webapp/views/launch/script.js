@@ -181,6 +181,9 @@ function handleResponse(res) {
         // == time map module ==
         // Start points
         case 'time_map.1':
+          if(buffer_layer_remove){
+            map.removeLayer(buffer_layer_remove)
+          }
           map.addLayer(selection);
 
           drawnItems.clearLayers();
@@ -339,6 +342,9 @@ function handleResponse(res) {
         }
           // == query module ==
         case 'query.2':
+          if(buffer_layer_remove){
+            map.removeLayer(buffer_layer_remove)
+          }
           form = formElement(messageId);
           lists.append($(`<select id="${messageId}-input" class='custom-select' size="10">` + list.map(col => `<option selected value="${col}">${col}</option>`) + `</select>`));
           buttons = [

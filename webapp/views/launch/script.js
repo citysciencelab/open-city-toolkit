@@ -331,7 +331,7 @@ function handleResponse(res) {
                 printModes: [
                   L.control.browserPrint.mode.auto("Automatico", "A6"),
                 ],
-                manualMode: true
+                manualMode: false
               }
               L.control.browserPrint(options).addTo(map)
               var modeToUse = L.control.browserPrint.mode.auto("Automatico", "A6");

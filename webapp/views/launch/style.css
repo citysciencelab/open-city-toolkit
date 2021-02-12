@@ -251,9 +251,6 @@ body {
 }
 
 .buffer-result tbody {
-  display:block;
-  overflow:auto;
-  max-height: 250px;
   position: relative;
   align-items: stretch;
 }

@@ -4,12 +4,19 @@ const fromPoints = window['time_map_from_points']
 const viaPoints = window['time_map_via_points']
 const strickenArea = window['time_map_stricken_area']
 const timeMap = window['time_map_result']
-let buffer_point, buffer_radius, buffered, buffered_layers=[], buffer_layer_remove=null
+let buffer_point, buffer_radius, buffered, buffered_layers=[], buffer_layer_remove=null, remove_buffer=[]
 /**
  * Handle incoming messages from backend
  * @param {object} res backend response
  * @return Promise resolving if the message is processed successfully
  */
+
+function clearBuffer(buffered_layers){
+    if(buffered_layers.length > 0){
+      buffered_layers.map(layer =>  map.removeLayer(layer))
+    }
+ }
+
 function onLayerToggle(name, element){
   const layer = jsonData.filter(layer => layer.name == name)
   var ptsWithin = turf.pointsWithinPolygon(layer[0], buffered)
@@ -29,7 +36,7 @@ function onLayerToggle(name, element){
     buffered_layers.push(buffer_layer)
   }
   else{
-    const remove_buffer = buffered_layers.filter(layer => layer.id == name)
+    remove_buffer = buffered_layers.filter(layer => layer.id == name)
     map.removeLayer(remove_buffer[0])
     buffered_layers=  buffered_layers.filter(layer => layer.id != name)
   }
@@ -184,6 +191,7 @@ function handleResponse(res) {
           if(buffer_layer_remove){
             map.removeLayer(buffer_layer_remove)
           }
+          clearBuffer(buffered_layers)
           map.addLayer(selection);
 
           drawnItems.clearLayers();
@@ -273,6 +281,7 @@ function handleResponse(res) {
           break;
 
         case 'buffer_module.1' : {
+          clearBuffer(buffered_layers)
           if(buffer_layer_remove){
             map.removeLayer(buffer_layer_remove)
           }
@@ -345,6 +354,7 @@ function handleResponse(res) {
           if(buffer_layer_remove){
             map.removeLayer(buffer_layer_remove)
           }
+          clearBuffer(buffered_layers)
           form = formElement(messageId);
           lists.append($(`<select id="${messageId}-input" class='custom-select' size="10">` + list.map(col => `<option selected value="${col}">${col}</option>`) + `</select>`));
           buttons = [

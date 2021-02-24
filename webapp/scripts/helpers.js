@@ -3,6 +3,7 @@ const path = require('path')
 const { execSync } = require('child_process') // Documentation: https://nodejs.org/api/child_process.html
 
 const OUTPUT_DIR = process.env.OUTPUT_DIR
+const GEOSERVER_UPLOAD = `${process.env.GEOSERVER_DATA_DIR}/data/upload/`
 
 /**
  * Check if directory is writable
@@ -67,6 +68,15 @@ function getResults() {
 }
 
 /**
+ * returns all user-uploaded layers in GEOSERVER_DATA_DIR
+ * @returns {array} list of user-uploaded layers
+ */
+function getUploadLayers() {
+  return getFilesOfType('gpkg', GEOSERVER_UPLOAD)
+    .map(name => name.substring(name.lastIndexOf('/') + 1, name.lastIndexOf('.')))
+}
+
+/**
  * Get all files of a given file type in a directory (recursive)
  * @param {string} extension file extension
  * @param {string} dir directory to search in
@@ -90,6 +100,7 @@ module.exports = {
   filterDefaultLayerFilenames,
   getFilesOfType,
   getResults,
+  getUploadLayers,
   mergePDFs,
   psToPDF,
   textToPS

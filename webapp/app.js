@@ -52,8 +52,9 @@ app.get('/', (req, res) => {
 })
 
 // functions
-const { getMetadata } = require('./scripts/grass')
-const { getResults } = require('./scripts/helpers')
+const { getMetadata, remove } = require('./scripts/grass')
+const { getResults, getUploadLayers } = require('./scripts/helpers')
+const { removeDatastore } = require('./scripts/geoserver')
 
 // modules
 const AddLocationModule = require('./scripts/modules/add_location')
@@ -73,7 +74,7 @@ const modules = {
 }
 
 // launch a module
-app.post('/launch', jsonParser, (req, res, next) => {
+app.post('/launch', jsonParser, async (req, res, next) => {
   // do some checks first
   if (!dataFromBrowserDir) {
     throw new Error("Cannot launch module: DATA_FROM_BROWSER_DIR is not defined.")
@@ -83,17 +84,18 @@ app.post('/launch', jsonParser, (req, res, next) => {
   }
 
   try {
-    res.send(modules[req.body.launch].launch())
+    const module = modules[req.body.launch]
+    res.send(await module.launch())
   } catch (err) {
     next(err)
   }
 })
 
 // message request
-app.post('/reply', jsonParser, (req, res, next) => {
+app.post('/reply', jsonParser, async (req, res, next) => {
   try {
     const module = modules[req.query.messageId.split('.')[0]]
-    const message = module.process(req.body.msg, req.query.messageId)
+    const message = await module.process(req.body.msg, req.query.messageId)
 
     if (message) {
       res.send(message)
@@ -106,13 +108,13 @@ app.post('/reply', jsonParser, (req, res, next) => {
 })
 
 // file upload
-app.post('/file', uploadParser.single('file'), (req, res, next) => {
+app.post('/file', uploadParser.single('file'), async (req, res, next) => {
   try {
     const module = modules[req.query.messageId.split('.')[0]]
     const file = `${dataFromBrowserDir}/${req.file.originalname}`
     const writer = fs.createWriteStream(file)
 
-    writer.write(req.file.buffer, (error) => {
+    writer.write(req.file.buffer, async (error) => {
       if (error) {
         next(error)
       }
@@ -121,7 +123,7 @@ app.post('/file', uploadParser.single('file'), (req, res, next) => {
       // Process file after it's finished downloading.
       // Have to add another try/catch block, as we're inside an async function
       try {
-        const message = module.process(file, req.query.messageId)
+        const message = await module.process(file, req.query.messageId)
 
         if (message) {
           res.send(message)
@@ -165,6 +167,27 @@ app.get('/attributes', jsonParser, async (req, res, next) => {
   try {
     const attributes = getMetadata('PERMANENT', req.query.table)
     res.json({ attributes })
+  } catch (err) {
+    next(err)
+  }
+})
+
+// return all user-uploaded layers in GEOSERVER_DATA_DIR
+app.get('/upload-layers', jsonParser, (req, res, next) => {
+  try {
+    res.json(getUploadLayers())
+  } catch (err) {
+    next(err)
+  }
+})
+
+// delete user-uploaded layer in GEOSERVER_DATA_DIR by name
+app.delete('/upload-layers', jsonParser, (req, res, next) => {
+  try {
+    remove('PERMANENT', req.query.layer)
+    fs.unlinkSync(`${geoserverDataDir}/data/upload/${req.query.layer}.gpkg`)
+    removeDatastore('vector', req.query.layer)
+    res.json({ message: `${req.query.layer} deleted!` })
   } catch (err) {
     next(err)
   }

@@ -1,4 +1,4 @@
-/* global $, L, t, map, drawnItems, refreshLayer */
+/* global $, L, t, map, drawnItems, refreshLayer, layerControl */
 const selection = window['selection']
 const fromPoints = window['time_map_from_points']
 const strickenArea = window['time_map_stricken_area']
@@ -139,6 +139,10 @@ function handleResponse(res) {
               }
             })
           ];
+          break;
+
+        case 'add_map.4':
+          layerControl.initialize()
           break;
 
         // == time map module ==
@@ -461,6 +465,12 @@ function showHelp() {
   $('#help-modal').show()
 }
 
+// eslint-disable-next-line no-unused-vars
+function showLayers() {
+  $('#layers-modal').show()
+  getLayers()
+}
+
 let blinkTimeout;
 // eslint-disable-next-line no-unused-vars
 function blink(selector) {
@@ -534,6 +544,34 @@ function getOutput() {
   }));
 }
 
+function getLayers() {
+  // TODO: nesting too deep here, maybe refactor get() to use then()
+  get('/upload-layers', {}, (res) => new Promise((resolve) => {
+    let list = $('#layer-list')
+    if (res.length) {
+      list.empty()
+      res.forEach(layer => {
+        const a = $(`<a href="#" class="list-group-item list-group-item-action">${layer}</a>`)
+        const deleteBtn = $(`<button type="button" class="btn btn-danger float-right">${t['Delete']}</button>`)
+        deleteBtn.on('click', (evt) => {
+          deleteMethod('/upload-layers', { layer }, () => new Promise((resolve) => {
+            evt.target.parentNode.remove()
+            layerControl.initialize() // refresh layerControl
+            window[layer] = undefined // remove global variable
+            resolve();
+          }))
+        })
+
+        a.append(deleteBtn)
+        list.append(a)
+      })
+    } else {
+      list.html('There is no user-uploaded layer.')
+    }
+    resolve();
+  }));
+}
+
 function getAttributes(table) {
   get('/attributes', { table }, (res) => new Promise((resolve) => {
     const { tableObj, columnObj } = JSON.parse(res.attributes);
@@ -561,6 +599,19 @@ function sendMessage(target, message, params, callback) {
     url: target + '?' + $.param(params),
     data: JSON.stringify(message),
     dataType: 'json',
+    contentType: 'application/json; encoding=utf-8',
+    error: onServerError
+  })
+    .done(res => callback(res).catch(onClientError))
+    .always(() => $('#loading').hide())
+}
+
+function deleteMethod(target, params, callback) {
+  $('#loading').show();
+
+  $.ajax({
+    type: 'DELETE',
+    url: target + '?' + $.param(params),
     contentType: 'application/json; encoding=utf-8',
     error: onServerError
   })

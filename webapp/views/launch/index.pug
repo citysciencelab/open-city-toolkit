@@ -43,6 +43,8 @@ html
                 a(class="btn dropdown-item" onclick="launchSettings('set_resolution')") #{t['Set resolution']}
                 div(class="dropdown-divider")
                 a(class="btn dropdown-item" onclick="launchSettings('add_map')") #{t['Add layer']}
+                div(class="dropdown-divider")
+                a(class="btn dropdown-item" onclick="showLayers()") #{t['Manage layers']}
             li(class="nav-item")
               button(class='btn btn-secondary btn-lg' onclick='showHelp()') #{t['Help']}
 
@@ -76,6 +78,9 @@ html
     div(id='table-attributes-modal' class='modal-background')
       include ../table-attributes-modal/index.pug
 
+    div(id='layers-modal' class='modal-background')
+      include ../layers-modal/index.pug
+
     script.
       //- enable Bootstrap tooltip on module select
       $(function () {
@@ -100,9 +105,11 @@ html
       const t = !{JSON.stringify(t)};
     script
       include ../map/config.js
+      include ../map/layerControl.js
       include ../map/legend.js
       include ../map/script.js
       include script.js
       include ../results-modal/script.js
       include ../help-modal/script.js
       include ../table-attributes-modal/script.js
+      include ../layers-modal/script.js

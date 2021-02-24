@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const services = [
+const staticServices = [
   {
     layers: 'osm_waterways',
     format: 'image/png',

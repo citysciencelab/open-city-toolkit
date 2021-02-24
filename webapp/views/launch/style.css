@@ -110,7 +110,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(230, 235, 228, 0.6);
-  z-index: 1000;
+  z-index: 10000;
 }
 
 #loading .loading-text {

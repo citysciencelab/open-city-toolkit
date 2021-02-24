@@ -18,7 +18,7 @@ The following instructions provide guidance for the installation of all required
 You can quickly set up a running system via [Docker](https://docs.docker.com/).
 
 Before building the image, environment variables need to be set in `webapp/.env`:
-- `GEOSERVER_URL`: The base URL of the local GeoServer instance. This should normally be the public IP or domain of the server, port 8080.
+- `GEOSERVER_URL`: The base URL of the local GeoServer instance (default: http://localhost:8080/geoserver).
 - `INITIAL_LAT`, `INITIAL_LON`: Initial center coordinates for the map view.
 - `USE_LANG`: Language of the user interface (default: English). A matching translations file must exist in `webapp/i18n`.
 
@@ -39,7 +39,7 @@ docker run -dti -e GEOSERVER_URL=... -e INITIAL_LAT=... -e INITIAL_LON=... -v `p
 
 The `geoserver_data`, `grass` and `output` directories are mounted into the container as volumes in order to make their contents persistent and accessible from the host system.
 
-While the container is running, the app is served at http://localhost:3000 and GeoServer is available at http://localhost:8080/geoserver/.
+While the container is running, the app is served at http://localhost:3000 and GeoServer is available at http://localhost:8080/geoserver.
 
 ### Without Docker
 

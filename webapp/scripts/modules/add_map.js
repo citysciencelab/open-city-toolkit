@@ -1,8 +1,10 @@
 const { addRaster, addVector, gpkgOut, mapsetExists, isLegalName } = require('../grass.js')
-const { checkWritableDir } = require('../helpers.js')
+const { checkWritableDir, getFilesOfType } = require('../helpers.js')
+const { deleteDatastore, addDatastore, addFeatureType } = require('../geoserver.js')
 const translations = require(`../../i18n/messages.${process.env.USE_LANG || 'en'}.json`)
 
 const GEOSERVER = `${process.env.GEOSERVER_DATA_DIR}/data`
+const GEOSERVER_UPLOAD = `${process.env.GEOSERVER_DATA_DIR}/data/upload/`
 
 module.exports = class {
   constructor() {
@@ -19,7 +21,7 @@ module.exports = class {
     return { id: 'add_map.1', message: translations['add_map.message.1'] }
   }
 
-  process(message, replyTo) {
+  async process(message, replyTo) {
     switch (replyTo) {
       case 'add_map.2': {
         // uploaded file
@@ -48,18 +50,35 @@ module.exports = class {
         }
       }
 
-      case 'add_map.3':
+      case 'add_map.3':{
         if (!this.mapFile) {
           throw new Error(translations['add_map.errors.3'])
         }
-
+  
         if (this.mapType === 'vector') {
+          const allGpkg = getFilesOfType('gpkg', GEOSERVER_UPLOAD)
+            .map(name=>name.substring(name.lastIndexOf('/') + 1, name.lastIndexOf('.')))
+
           addVector('PERMANENT', this.mapFile, message)
-          gpkgOut('PERMANENT', message, message)
-        } else if (this.mapType === 'raster') {
+          gpkgOut('PERMANENT', message, message, `${GEOSERVER_UPLOAD}`)
+      
+          // publish geoserver layer
+          // TODO: handle .geojson & .osm
+          if (this.mapFile.match(/.*\.gpkg/i)) {
+            // delete old data if exists
+            if (allGpkg.indexOf(message) > -1) {
+              await deleteDatastore('vector', message)
+            }
+            await addDatastore('vector', message, `${message}.gpkg`, 'geopkg')
+            await addFeatureType('vector', message, message)
+          }
+        } 
+        // TODO: Geoserver API handlers for raster
+        else if (this.mapType === 'raster') {
           addRaster('PERMANENT', this.mapFile, message)
         }
         return { id: 'add_map.4', message: translations['add_map.message.4'] }
+      }
     }
   }
 }

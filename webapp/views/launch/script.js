@@ -594,10 +594,7 @@ function validateNum(num) {
 
 // eslint-disable-next-line no-unused-vars
 function showResults() {
-  getOutput({})
   $('#results-modal').show()
-  // empty iframe content
-  $('#results-iframe').attr('src', '')
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -669,15 +666,6 @@ function saveDrawing(res) {
   return true;
 }
 
-function getOutput() {
-  get('/output', {}, (res) => new Promise((resolve) => {
-    const baseOption = "<option selected value=''> - </option>";
-    const options = res.list.reduce((str, file) => str + `<option value="${file}">${file}</option>`, '');
-    $('#results-select').html(baseOption + options);
-    resolve();
-  }));
-}
-
 function getAttributes(table) {
   get('/attributes', { table }, (res) => new Promise((resolve) => {
     const { tableObj, columnObj } = JSON.parse(res.attributes);
@@ -740,6 +728,20 @@ function upload(form, params, callback) {
   })
     .done(res => callback(res).catch(onClientError))
     .always(() => $('#loading').hide());
+}
+
+// eslint-disable-next-line no-unused-vars
+function deleteMethod(target, params, callback) {
+  $('#loading').show();
+
+  $.ajax({
+    type: 'DELETE',
+    url: target + '?' + $.param(params),
+    contentType: 'application/json; encoding=utf-8',
+    error: onServerError
+  })
+    .done(res => callback(res).catch(onClientError))
+    .always(() => $('#loading').hide())
 }
 
 function onClientError(error) {

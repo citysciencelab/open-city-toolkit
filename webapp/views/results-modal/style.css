@@ -1,12 +1,3 @@
-#results-header {
-    display: flex;
-    margin-bottom: 20px;
-}
-
-#results-select{
-    width: auto;
-}
-
-iframe {
-    border: 0;
+.modal-body {
+    overflow-y: scroll;
 }

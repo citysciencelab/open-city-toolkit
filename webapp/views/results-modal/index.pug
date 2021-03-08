@@ -1,8 +1,17 @@
-div(class='modal-content')
-  div(class='modal-close-container')
-    span(class='modal-close' onclick='hideResults()') &times;
-  div(id='results-header')
-    span(class='span-center') #{t['Select result to be displayed']}&nbsp;&nbsp;
-    select(id='results-select' class='custom-select custom-select-lg' onchange='display()')
-
-  iframe(id='results-iframe' src="" width="100%" height="75%")
+div(class="modal-content")
+  div(class="modal-header")
+    h4(class="modal-title") Previous results
+    div(class="btn-group" role="group")
+      button(type="button" class="btn btn-outline-primary" onclick="showAllResults()") All
+      button(type="button" class="btn btn-outline-primary" onclick="showTimeMapResults()") Time map
+      button(type="button" class="btn btn-outline-primary" onclick="showQueryResults()") Query
+    span(class="modal-close" onclick="hideResults()") &times;
+  div(class="modal-body")
+    div(id="results-table")
+      table(class="table")
+        thead
+          tr
+            th Date
+            th File
+            th
+        tbody

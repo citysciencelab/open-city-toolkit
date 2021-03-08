@@ -147,12 +147,15 @@ function handleResponse(res) {
           form = formElement(messageId);
           buttons = [
             buttonElement(t['Automobile']).click(() => {
+              timeMap.setParams({styles: 'time_map_vector_car'});
               reply(res, 'Automobile');
             }),
             buttonElement(t['Bicycle']).click(() => {
+              timeMap.setParams({styles: 'time_map_vector_bicycle'});
               reply(res, 'Bicycle');
             }),
             buttonElement(t['Walking']).click(() => {
+              timeMap.setParams({styles: 'time_map_vector_walking'});
               reply(res, 'Walking');
             })
           ];

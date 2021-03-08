@@ -1,9 +1,10 @@
 Motorways: 0
-Trunk and primary: 0
+Trunk roads: 0
+Primary roads: 12
 Secondary roads: 12
 Tertiary roads: 12
 Connecting roads: 12
 Service and track roads: 12
 Residential roads: 12
-Living_streets: 12
-Footways: 12
+Living_streets: 10
+Footways: 5

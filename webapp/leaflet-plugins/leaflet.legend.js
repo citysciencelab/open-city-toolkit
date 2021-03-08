@@ -32,7 +32,7 @@ L.Control.Legend = L.Control.extend({
       const img = L.DomUtil.create('img');
 
       // build legend URL
-      img.src = layer._url + '?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=' + layer.wmsParams.layers;
+      img.src = layer._url + '?SERVICE=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=' + layer.wmsParams.layers + '&STYLE=' + layer.wmsParams.styles;
       if (layer.options.type === 'raster') {
         img.src += '&LEGEND_OPTIONS=forceRule:True;dx:0.2;dy:0.2;mx:0.2;my:0.2;fontStyle:bold;borderColor:0000ff;border:true;fontSize:10';
       }

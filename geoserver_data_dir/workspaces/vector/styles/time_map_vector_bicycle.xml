@@ -1,6 +1,6 @@
 <style>
   <id>StyleInfoImpl--6c36c2f6:175df9af6d2:-7fd1</id>
-  <name>time_map_vector</name>
+  <name>time_map_vector_bicycle</name>
   <workspace>
     <id>WorkspaceInfoImpl-53a0964:16fc2624139:-7fff</id>
   </workspace>
@@ -8,7 +8,7 @@
   <languageVersion>
     <version>1.1.0</version>
   </languageVersion>
-  <filename>time_map_vector.sld</filename>
+  <filename>time_map_vector_bicycle.sld</filename>
   <dateCreated>2020-11-19 10:40:11.365 UTC</dateCreated>
-  <dateModified>2020-11-19 13:20:27.193 UTC</dateModified>
+  <dateModified>2021-03-05 14:05:52.492 UTC</dateModified>
 </style>

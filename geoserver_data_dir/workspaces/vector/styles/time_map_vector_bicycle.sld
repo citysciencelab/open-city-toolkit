@@ -280,7 +280,7 @@
         <se:Rule>
           <se:Name>40 - 45</se:Name>
           <se:Description>
-            <se:Title>40 - 45 min</se:Title>
+            <se:Title>&gt; 40 min</se:Title>
           </se:Description>
           <ogc:Filter xmlns:ogc="http://www.opengis.net/ogc">
             <ogc:And>
@@ -288,10 +288,6 @@
                 <ogc:PropertyName>data</ogc:PropertyName>
                 <ogc:Literal>40</ogc:Literal>
               </ogc:PropertyIsGreaterThan>
-              <ogc:PropertyIsLessThanOrEqualTo>
-                <ogc:PropertyName>data</ogc:PropertyName>
-                <ogc:Literal>45</ogc:Literal>
-              </ogc:PropertyIsLessThanOrEqualTo>
             </ogc:And>
           </ogc:Filter>
           <se:PointSymbolizer>

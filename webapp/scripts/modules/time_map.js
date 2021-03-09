@@ -82,6 +82,8 @@ module.exports = class {
   process(message, replyTo) {
     switch (replyTo) {
       case 'time_map.0': {
+        this.travelMode = message.toLowerCase();
+
         let speedFile = ''
         switch (message) {
           case 'Automobile':
@@ -294,9 +296,11 @@ end
 
     fs.writeFileSync(`${GRASS}/variables/time_map.ps_param`, psParams)
 
-    // set color for maps:
+    // set resolution
     grass(this.mapset, `g.region res=${this.resolution}`)
-    grass(this.mapset, `r.colors map=m1a_time_map color=gyr`)
+
+    // Set color
+    grass(this.mapset, `r.colors map=m1a_time_map rules="${GRASS}/variables/defaults/time_map_rules_${this.travelMode}"`)
 
     const date = new Date()
     const dateString = date.toString()

@@ -59,7 +59,7 @@ module.exports = class {
     this.averageSpeed = AVERAGE_SPEED
 
     // Delete files from previous run, if any
-    for (const filename of ['m1_from_points.gpkg', 'm1_via_points.gpkg', 'm1_stricken_area.gpkg', 'm1_time_map.gpkg', 'm1_time_map.tif']) {
+    for (const filename of ['m1_from_points.gpkg', 'm1_stricken_area.gpkg', 'm1_time_map.gpkg', 'm1_time_map.tif']) {
       try {
         fs.unlinkSync(`${GEOSERVER}/${filename}`)
       } catch (err) {
@@ -70,7 +70,6 @@ module.exports = class {
     // remove GRASS layers from previous run, if any
     try {
       remove(this.mapset, 'm1_from_points')
-      remove(this.mapset, 'm1_via_points')
       remove(this.mapset, 'm1_stricken_area')
     } catch (err) {
       // nothing to unlink
@@ -110,18 +109,6 @@ module.exports = class {
         }
         return { id: 'time_map.5', message: translations['time_map.message.5'] }
 
-        // Via points temporarily disabled
-        // case 'time_map.2':
-        //   if (message.match(/drawing\.geojson/)) {
-        //     addVector(this.mapset, message, 'm1_via_points')
-        //     gpkgOut(this.mapset, 'm1_via_points', 'm1_via_points')
-        //     this.viaPoints = 'm1_via_points'
-        //     return { id: 'time_map.3', message: translations['time_map.message.3'] }
-        //   } else {
-        //     this.viaPoints = null
-        //   }
-        //   return { id: 'time_map.3', message: translations['time_map.message.3'] }
-
       case 'time_map.3':
         if (message.match(/drawing\.geojson/)) {
           this.strickenArea = 'm1_stricken_area'
@@ -160,23 +147,6 @@ module.exports = class {
         this.reductionRatio = parseFloat(message) / 100
         this.calculate()
         return { id: 'time_map.6', message: translations['time_map.message.6'] }
-
-      // temporarilly skip message 8 & 9
-      // case 'time_map.4':
-      //   this.reductionRatio = parseFloat(message) / 100
-      //   return messages[8]
-
-      // case 'time_map.8':
-      //   if (message.toLowerCase() == 'yes') {
-      //     return messages[9]
-      //   }
-      //   this.calculate()
-      //   return messages[6]
-
-      // case 'time_map.9':
-      //   this.averageSpeed = message
-      //   this.calculate()
-      //   return messages[6]
     }
   }
 
@@ -189,15 +159,7 @@ module.exports = class {
     this.toPoints = 'm1a_highway_points'
 
     // threshold to connect is ~ 330 m
-    grass(this.mapset, `v.net input=highways points=${this.fromPoints} output=m1a_highways_from_points operation=connect threshold=${CONNECT_DISTANCE} --overwrite`)
-
-    // connecting from/via/to points to the clipped network, if neccessary. Via points are optional, first have to check if user previously has selected those or not.
-    if (this.viaPoints) {
-      grass(this.mapset, `v.net input=highways points=${this.viaPoints} output=m1a_highways_via_points operation=connect threshold=${CONNECT_DISTANCE} --overwrite`)
-      grass(this.mapset, `v.patch -e input=m1a_highways_via_points,m1a_highways_from_points output=m1a_highways_points_connected --overwrite`)
-    } else {
-      grass(this.mapset, `g.rename vector=m1a_highways_from_points,m1a_highways_points_connected --overwrite`)
-    }
+    grass(this.mapset, `v.net input=highways points=${this.fromPoints} output=m1a_highways_points_connected operation=connect threshold=${CONNECT_DISTANCE} --overwrite`)
 
     // Add "spd_average" attribute column (integer type) to the road network map (if not yet exist -- if exist GRASS will skip this process)
     grass(this.mapset, `v.db.addcolumn map=m1a_highways_points_connected columns='avg_speed double precision'`)
@@ -214,14 +176,7 @@ module.exports = class {
     grass(this.mapset, `r.patch input=m1a_temp_connections,m1a_highways_points_connected_1 output=m1a_highways_points_connected --overwrite`)
     grass(this.mapset, `r.mapcalc expression="m1a_highways_points_connected=float(m1a_highways_points_connected)" --overwrite`)
 
-    // Now vector zones are created around from and via points (its radius is equal to the current resolution),
-    // converted into raster format, and patched to raster map 'temp' (just created in the previous step)
-    if (this.viaPoints) {
-      grass(this.mapset, `v.patch -e input=${this.fromPoints},${this.viaPoints} output=m1a_from_via_points --overwrite`)
-      grass(this.mapset, `v.buffer input=m1a_from_via_points output=m1a_from_via_zones distance=${this.resolution} --overwrite`)
-    } else {
-      grass(this.mapset, `v.buffer input=${this.fromPoints} output=m1a_from_via_zones distance=${this.resolution} --overwrite`)
-    }
+    grass(this.mapset, `v.buffer input=${this.fromPoints} output=m1a_from_via_zones distance=${this.resolution} --overwrite`)
     grass(this.mapset, `v.to.rast input=m1a_from_via_zones output=m1a_from_via_zones use=val val=${this.averageSpeed} --overwrite`)
     grass(this.mapset, `r.patch input=m1a_highways_points_connected,m1a_from_via_zones output=m1a_highways_points_connected_zones --overwrite`)
 
@@ -241,21 +196,8 @@ module.exports = class {
     // specific_time here is the time requested to cross a cell, where the resolution is as defined in resolution file
     grass(this.mapset, `r.mapcalc expression="m1a_specific_time=${this.resolution}/(m1a_highways_points_connected_area*0.27777)" --overwrite`)
 
-    // Calculating 'from--via' time map, 'via--to' time map and it sum. There is a NULL value replacenet too. It is neccessary, because otherwise, if one of the maps containes NULL value, NULL value cells will not considering while summarizing the maps. Therefore, before mapcalc operation, NULL has to be replaced by 0.
-    // FIXME: when this.viaPoints == true, PDF results has a green background, probably due to null raster cells
-    if (this.viaPoints) {
-      grass(this.mapset, `r.cost -n input=m1a_specific_time output=m1a_from_to_cost start_points=${this.fromPoints} stop_points=${this.viaPoints} --overwrite`)
-      const VIA_VALUE = grass(this.mapset, `r.what map=m1a_from_to_cost points=${this.viaPoints}`).split('|')[3]
-      grass(this.mapset, `r.null map=m1a_from_to_cost null=0 --overwrite`)
-      grass(this.mapset, `r.cost -n input=m1a_specific_time output=m1a_via_to_cost start_points=${this.viaPoints} stop_points=${this.toPoints} --overwrite`)
-      grass(this.mapset, `r.null map=m1a_via_to_cost --overwrite`)
-      grass(this.mapset, `r.mapcalc expression="m1a_time_map_temp=m1a_via_to_cost+${VIA_VALUE}" --overwrite`)
-      grass(this.mapset, `r.mapcalc expression="m1a_time_map=m1a_time_map_temp/60*${METER_TO_PROJ}" --overwrite`)
-    } else {
-      grass(this.mapset, `r.cost input=m1a_specific_time output=m1a_from_to_cost start_points=${this.fromPoints} stop_points=${this.toPoints} --overwrite`)
-      grass(this.mapset, `r.mapcalc expression="m1a_time_map_temp=m1a_from_to_cost*${METER_TO_PROJ}/60" --overwrite`)
-      grass(this.mapset, `g.rename raster=m1a_time_map_temp,m1a_time_map --overwrite`)
-    }
+    grass(this.mapset, `r.cost input=m1a_specific_time output=m1a_from_to_cost start_points=${this.fromPoints} stop_points=${this.toPoints} --overwrite`)
+    grass(this.mapset, `r.mapcalc expression="m1a_time_map=m1a_from_to_cost*${METER_TO_PROJ}/60" --overwrite`)
 
     // export raster map
     grass(this.mapset, `r.out.gdal input=m1a_time_map output="${GEOSERVER}/m1_time_map.tif" format=GTiff --overwrite`)
@@ -272,17 +214,6 @@ module.exports = class {
     // Generating pdf output
 
     let psParams = fs.readFileSync(`${GRASS}/variables/defaults/time_map.ps_param`).toString()
-
-    if (this.viaPoints) {
-      psParams += `
-vpoints m1_via_points
-color black
-fcolor #ff77ff
-symbol basic/cross3
-size 10
-end
-`
-    }
 
     if (this.strickenArea) {
       psParams += `
@@ -316,7 +247,6 @@ ${translations['time_map.output.3']}
 ${translations['time_map.output.4']}
 
 ${translations['time_map.output.5']}
-${translations['time_map.output.6']}
 ${translations['time_map.output.7']}
 
 ${translations['time_map.output.8']}:

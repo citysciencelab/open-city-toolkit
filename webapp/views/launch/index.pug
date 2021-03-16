@@ -15,6 +15,8 @@ html
     script(src="/lib/leaflet-measure/leaflet-measure.js")
     script(src="/lib/leaflet-plugins/leaflet.legend.js")
     script(src="/lib/leaflet-plugins/leaflet.getfeatureinfo.js")
+    script 
+      include ../results-modal/script.js
 
     style
       include style.css
@@ -36,7 +38,7 @@ html
                 option(value="query") #{t['Query area']}
                 option(value="cotopaxi_scenarios") #{t['Cotopaxi eruption scenarios']}
               button(class="btn btn-success btn-lg mr-2" onclick="launchModule()") ▷&nbsp;#{t['Run']}
-              button(class="btn btn-light btn-lg" id="result-btn" onclick="showResults()") #{t['Results']}
+              button(class='btn btn-light btn-lg' id="result-btn" onclick='onClickResults()') #{t['Results']}
             li(class="nav-item flex-grow-1")
             li(class="nav-item dropdown")
               a(class="btn btn-lg nav-link dropdown-toggle" id="settings-menu" data-toggle="dropdown") #{t['Settings']}
@@ -106,7 +108,6 @@ html
     script
       include ../map/config.js
       include ../map/script.js
-      include ../results-modal/script.js
       include ../help-modal/script.js
       include ../table-attributes-modal/script.js
       include script.js

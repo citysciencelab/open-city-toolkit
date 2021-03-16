@@ -1,4 +1,4 @@
-/* global $, L, t, map, drawnItems, refreshLayer */
+/* global $, L, t, map, drawnItems, refreshLayer, resultModal */
 const selection = window['selection']
 const fromPoints = window['time_map_from_points']
 const strickenArea = window['time_map_stricken_area']
@@ -272,6 +272,13 @@ function handleResponse(res) {
 
           cancelDrawing();
           drawnItems.clearLayers();
+
+          if (res.result) {
+            form = formElement(messageId);
+            buttons = [
+              buttonLinkElement(t['Open result'], 'output/' + res.result)
+            ];
+          }
           break;
 
         // == query module ==
@@ -348,6 +355,15 @@ function handleResponse(res) {
           break;
         }
 
+        case 'query.24':
+          if (res.result) {
+            form = formElement(messageId);
+            buttons = [
+              buttonLinkElement(t['Open result'], 'output/' + res.result)
+            ];
+          }
+          break;
+
         /* Cotopaxi module */
 
         // Choose type of volcanic threat
@@ -412,7 +428,6 @@ function handleResponse(res) {
               reply(res, input[0].value);
             })
           ];
-          break;
       }
 
       textarea.append(text);
@@ -442,6 +457,10 @@ function formElement(id, isMultipart) {
 
 function buttonElement(action) {
   return $(`<button type="button" class="btn btn-primary">${action}</button>`);
+}
+
+function buttonLinkElement(action, url) {
+  return $(`<a type="button" class="btn btn-primary" href="${url}" target="_blank">${action}</a>`);
 }
 
 function relationSelect() {
@@ -581,8 +600,9 @@ function validateNum(num) {
 }
 
 // eslint-disable-next-line no-unused-vars
-function showResults() {
+function onClickResults() {
   $('#results-modal').show()
+  resultModal.updateResults();
 }
 
 // eslint-disable-next-line no-unused-vars

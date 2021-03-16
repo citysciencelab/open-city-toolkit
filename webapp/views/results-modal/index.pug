@@ -1,17 +1,38 @@
 div(class="modal-content")
   div(class="modal-header")
-    h4(class="modal-title") Previous results
+    h4(class="modal-title") #{t['results.header']}
     div(class="btn-group" role="group")
-      button(type="button" class="btn btn-outline-primary" onclick="showAllResults()") All
-      button(type="button" class="btn btn-outline-primary" onclick="showTimeMapResults()") Time map
-      button(type="button" class="btn btn-outline-primary" onclick="showQueryResults()") Query
-    span(class="modal-close" onclick="hideResults()") &times;
-  div(class="modal-body")
+      button(type="button" class="btn btn-outline-primary" id="all-btn" onclick="resultModal.onClickAll()") #{t['All']}
+      button(type="button" class="btn btn-outline-primary" id="time-map-btn" onclick="resultModal.onClickTimeMap()") #{t['Time map']}
+      button(type="button" class="btn btn-outline-primary" id="query-btn" onclick="resultModal.onClickQuery()") #{t['Query']}
+    button(type="button" class="btn btn-outline-danger" onclick="resultModal.onClickDeleteAll()") #{t['Delete all']}
+    span(class="modal-close" onclick="resultModal.hide()") &times;
+  div(class="modal-body results-container")
     div(id="results-table")
       table(class="table")
         thead
           tr
-            th Date
-            th File
+            th #{t['Date']}
+            th #{t['File']}
             th
         tbody
+  div(id='delete-modal' class='modal-background')
+    div(class="modal-content-small")
+      div(class="modal-header")
+        h4(class="modal-title text-danger") #{t['results.deleteHeader']}
+        span(class="modal-close" onclick="deleteModal.hide()") &times;
+      div(class="modal-body") #{t['results.deleteBody']} &nbsp;
+        span(id="result-to-delete-span" class="font-weight-bold")
+        span &nbsp;?
+      div(class="d-flex flex-row-reverse")
+        button(type="button" class="btn btn-outline-secondary" onclick="deleteModal.hide()") #{t['Cancel']}
+        button(type="button" class="btn btn-outline-danger mr-2" onclick="deleteModal.onClickDelete()") #{t['Delete']}
+  div(id='delete-all-modal' class='modal-background')
+    div(class="modal-content-small")
+      div(class="modal-header")
+        h4(class="modal-title text-danger") #{t['results.deleteAllHeader']}
+        span(class="modal-close" onclick="deleteAllModal.hide()") &times;
+      div(class="modal-body") #{t['results.deleteAllBody']}
+      div(class="d-flex flex-row-reverse")
+        button(type="button" class="btn btn-outline-secondary" onclick="deleteAllModal.hide()") #{t['Cancel']}
+        button(type="button" class="btn btn-outline-danger mr-2" onclick="deleteAllModal.onClickDelete()") #{t['Delete']}

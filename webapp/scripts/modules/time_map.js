@@ -124,7 +124,11 @@ module.exports = class {
           }
         }
         this.calculate()
-        return { id: 'time_map.6', message: translations['time_map.message.6'] }
+        return {
+          id: 'time_map.6',
+          message: translations['time_map.message.6'],
+          result: this.outfile
+        }
 
       case 'time_map.12':
         this.zonesLayer = message
@@ -146,11 +150,17 @@ module.exports = class {
       case 'time_map.4':
         this.reductionRatio = parseFloat(message) / 100
         this.calculate()
-        return { id: 'time_map.6', message: translations['time_map.message.6'] }
+        return {
+          id: 'time_map.6',
+          message: translations['time_map.message.6'],
+          result: this.outfile
+        }
     }
   }
 
   calculate() {
+    this.outfile = null;
+
     // Setting region to fit the "selection" map (taken by location_selector) and resolution
     grass(this.mapset, `g.region vector=selection@PERMANENT res=${this.resolution} --overwrite`)
 
@@ -260,7 +270,9 @@ ${translations['time_map.output.9']}: ${this.reductionRatio}`)
     grass(this.mapset, `ps.map input="${GRASS}/variables/time_map.ps_param" output=tmp/time_map_1.ps --overwrite`)
     psToPDF('tmp/time_map_1.ps', 'tmp/time_map_1.pdf')
 
-    mergePDFs(`${OUTPUT}/time_map_results_${safeDateString}.pdf`, 'tmp/time_map_1.pdf', 'tmp/time_map_info_text.pdf')
+    this.outfile = `time_map_results_${safeDateString}.pdf`
+
+    mergePDFs(`${OUTPUT}/${this.outfile}`, 'tmp/time_map_1.pdf', 'tmp/time_map_info_text.pdf')
 
     grass(this.mapset, `g.remove -f type=vector pattern=temp_*`)
     grass(this.mapset, `g.remove -f type=vector pattern=m1a_*`)

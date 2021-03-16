@@ -128,12 +128,18 @@ module.exports = class {
         const where = message.reduce((sum, msg) => sum + msg.where + ' ', '').trim()
         this.calculate(message, where)
 
-        return { id: 'query.24', message: translations['query.message.24'] }
+        return {
+          id: 'query.24',
+          message: translations['query.message.24'],
+          result: this.outfile
+        }
       }
     }
   }
 
   calculate(message, where) {
+    this.outfile = null;
+
     // remove old query_result
     remove(this.mapset, QUERY_RESULT_NAME)
 
@@ -184,7 +190,9 @@ List of features (only shows the first 30 features):
     grass(this.mapset, `ps.map input="${GRASS}/variables/defaults/query.ps_param" output=tmp/query_map.ps --overwrite`)
     psToPDF('tmp/query_map.ps', 'tmp/query_map.pdf')
 
-    mergePDFs(`${OUTPUT}/query_results_${safeDateString}.pdf`, 'tmp/query_map.pdf', 'tmp/statistics.pdf')
+    this.outfile = `query_results_${safeDateString}.pdf`;
+
+    mergePDFs(`${OUTPUT}/${this.outfile}`, 'tmp/query_map.pdf', 'tmp/statistics.pdf')
 
     fs.rmdirSync('tmp', { recursive: true })
 

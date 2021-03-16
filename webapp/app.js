@@ -12,6 +12,7 @@ const translations = require(`./i18n/messages.${process.env.USE_LANG || 'en'}.js
 
 // File system
 const fs = require('fs')
+const path = require('path');
 
 // Express server
 const express = require('express')
@@ -170,6 +171,24 @@ app.delete('/output', jsonParser, (req, res, next) => {
   try {
     fs.unlinkSync(`${OUTPUT_DIR}/${req.query.file}`)
     res.json({ message: `${req.query.file} deleted!` })
+  } catch (err) {
+    next(err)
+  }
+})
+
+// delete all files in OUTPUT_DIR
+app.delete('/output-all', jsonParser, (req, res, next) => {
+  try {
+    fs.readdir(OUTPUT_DIR, (err, files) => {
+      if (err) throw err;
+
+      for (const file of files) {
+        fs.unlink(path.join(OUTPUT_DIR, file), err => {
+          if (err) throw err;
+        });
+      }
+    });
+    res.json({ message: 'output folder emptied!' })
   } catch (err) {
     next(err)
   }

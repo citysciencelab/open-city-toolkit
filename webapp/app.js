@@ -36,6 +36,7 @@ app.use('/lib/bootstrap', express.static('node_modules/bootstrap/dist'))
 app.use('/lib/leaflet', express.static('node_modules/leaflet/dist'))
 app.use('/lib/leaflet-draw', express.static('node_modules/leaflet-draw/dist'))
 app.use('/lib/leaflet-groupedlayercontrol', express.static('node_modules/leaflet-groupedlayercontrol/src'))
+app.use('/lib/leaflet-measure', express.static('node_modules/leaflet-measure/dist'));
 app.use('/lib/leaflet-plugins', express.static('./leaflet-plugins'))
 
 // Views (using Pug template engine)

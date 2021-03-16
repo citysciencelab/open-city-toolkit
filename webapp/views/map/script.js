@@ -113,6 +113,22 @@ map.on(L.Draw.Event.DRAWSTOP, () => {
 });
 
 
+/* Measure tool */
+
+L.control.measure({
+  position : 'topleft',
+  primaryLengthUnit: 'kilometers',
+  primaryAreaUnit: 'sqkilometers',
+  secondaryLengthUnit: 'miles',
+  secondaryAreaUnit: 'sqmiles',
+  units: {
+    sqkilometers: {factor: 1e-6, display: 'km²', decimals: 2},
+  },
+  activeColor: '#1e90ff',
+  completedColor: '#1e90ff'
+}).addTo(map);
+
+
 /* Scale bar */
 
 L.control.scale({ maxWidth: 300, position: 'bottomright' }).addTo(map);

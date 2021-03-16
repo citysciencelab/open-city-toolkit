@@ -48,6 +48,15 @@ body {
   margin: 4px 0 12px;
 }
 
+.gutter {
+  align-self: center;
+  height: 15%;
+  width: 8px !important;
+  border-left: 2px dotted darkgray;
+  border-right: 2px dotted darkgray;
+  cursor: col-resize;
+}
+
 /* Map */
 
 #map-container {

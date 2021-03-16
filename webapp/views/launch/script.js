@@ -605,11 +605,6 @@ function onClickResults() {
   resultModal.updateResults();
 }
 
-// eslint-disable-next-line no-unused-vars
-function showHelp() {
-  $('#help-modal').show()
-}
-
 let blinkTimeout;
 // eslint-disable-next-line no-unused-vars
 function blink(selector) {

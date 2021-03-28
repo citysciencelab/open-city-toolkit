@@ -123,6 +123,7 @@ module.exports = class {
             list: listVector('cotopaxi_scenarios').filter(layer => layer.match(/^(ash_fall|lahar_flow|lava_flow)_zones@cotopaxi_scenarios$/))
           }
         }
+        this.strickenArea = null;
         this.calculate()
         return {
           id: 'time_map.6',

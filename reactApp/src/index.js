@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Root } from 'components';
+import 'styles/style.css';
 
 const App = () => {
     return (
-        <h1>
-            Open City Toolkit
-        </h1>
+        <Root />
     );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("app"));

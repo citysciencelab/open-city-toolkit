@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: path.join(__dirname, "src", "index.js"),
@@ -9,14 +10,24 @@ module.exports = {
     devServer: { contentBase: path.join(__dirname, "src") },
     module: {
         rules: [
-            { 
-                test: /\.(js|jsx)$/, 
-                exclude: /node_modules/, 
-                use: ["babel-loader"] 
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ["babel-loader"]
             },
             {
                 test: /\.(css|scss)$/,
                 use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: ["file-loader",
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            disable: true,
+                        },
+                    },]
             },
         ],
     },
@@ -24,5 +35,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "src", "index.html"),
         }),
+        new Dotenv()
     ],
 };

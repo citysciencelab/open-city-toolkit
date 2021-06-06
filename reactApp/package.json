@@ -10,6 +10,9 @@
   "author": "Yuxiang Zhang",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^5.0.1",
+    "leaflet": "^1.7.1",
+    "leaflet-groupedlayercontrol": "^0.6.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -20,7 +23,11 @@
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
+    "dotenv-webpack": "^7.0.3",
+    "eslint": "^7.28.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
+    "image-webpack-loader": "^7.0.1",
     "node-sass": "^6.0.0",
     "path": "^0.12.7",
     "sass-loader": "^11.1.1",

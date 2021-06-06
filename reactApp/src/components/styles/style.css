@@ -1,0 +1,227 @@
+body {
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.15rem;
+  }
+  
+  /* Navbar */
+  
+  .navbar .navbar-brand {
+    font-size: 1.3rem;
+  }
+  
+  .navbar .navbar-nav > li {
+    margin-left: 24px;
+  }
+  
+  .navbar .dropdown-menu {
+    z-index: 1001;
+  }
+  
+  .navbar .btn-lg,
+  .navbar .custom-select-lg {
+    font-size: inherit;
+  }
+  
+  /* Sidebar elements */
+  
+  #buttonarea button {
+    margin: 5px;
+  }
+  
+  #textarea {
+    margin-bottom: 12px;
+  }
+  
+  #lists select {
+    width: 100%;
+  }
+  
+  #giz-logo {
+    height: 40px;
+    margin: 4px 12px 4px 0;
+  }
+  
+  #hcu-logo {
+    height: 32px;
+    margin: 4px 0 12px;
+  }
+  
+  .gutter {
+    align-self: center;
+    height: 15%;
+    width: 8px !important;
+    border-left: 2px dotted darkgray;
+    border-right: 2px dotted darkgray;
+    cursor: col-resize;
+  }
+  
+  /* Map */
+  
+  #map-container {
+    padding: 0;
+    position: relative;
+    overflow-y: hidden;
+  }
+  
+  /* Components */
+  
+  .card {
+    margin: 10px;
+    border: 0;
+    border-radius: 10px;
+  }
+  
+  .card.card-border {
+    padding: 10px;
+  }
+  
+  .card form {
+    margin-bottom: 0;
+  }
+  
+  .validation-error {
+    color: #db0000;
+  }
+  
+  .box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .button {
+    padding: 8px 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border-radius: 20px;
+  }
+  
+  #alert-anchor {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 2000;
+  }
+  
+  .alert {
+    margin: 10px;
+  }
+  
+  .alert .close {
+    margin-left: 16px;
+  }
+  
+  #loading {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(230, 235, 228, 0.6);
+    z-index: 10000;
+  }
+  
+  #loading .loading-text {
+    position: absolute;
+    top: calc(50% + 35px);
+    left: calc(50% - 90px);
+    font-size: 32px;
+    color: gray;
+  }
+  
+  #loading .spinner {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: calc(50% - 70px);
+    left: calc(50% - 35px);
+    color: gray;
+  }
+  
+  /* The Modal (background) */
+  
+  .modal-background {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  @keyframes blinker {
+    from {
+      opacity: 1.0;
+    }
+    to {
+      opacity: 0.0;
+    }
+  }
+  
+  .blink {
+    text-decoration: blink;
+    animation-name: blinker;
+    animation-duration: 0.6s;
+    animation-iteration-count: 6;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  /* Modal Content/Box */
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    border-radius: 6px;
+    height: 75%;
+  }
+  
+  .modal-content-small {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    width: 40%;
+    /* Could be more or less, depending on screen size */
+    border-radius: 6px;
+  }
+  
+  /* The Close Button */
+  
+  .modal-close-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    align-self: flex-end;
+  }
+  
+  .modal-close:hover, .modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Tooltip */
+  
+  .tooltip {
+    font-size: 1rem;
+  }
+  
+  .tooltip-inner {
+    max-width: 300px;
+  }
+  

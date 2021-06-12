@@ -4,9 +4,9 @@ import { Root } from 'components';
 import 'styles/style.css';
 
 const App = () => {
-    return (
-        <Root />
-    );
-}
+  return (
+    <Root />
+  );
+};
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById('app'));

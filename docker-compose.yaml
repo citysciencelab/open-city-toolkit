@@ -10,6 +10,23 @@ services:
       - type: volume
         source: geoserver_data
         target: /usr/share/geoserver/data_dir
+
+  wpsserver:
+    build: https://github.com/citysciencelab/open-city-toolkit-flask.git
+    image: open-city-toolkit/wpsserver
+    ports:
+      - 5000:5000
+    volumes:
+      - type: volume
+        source: grass
+        target: /pywps-flask/grass
+      - type: volume
+        source: output
+        target: /pywps-flask/outputs
+      - type: volume
+        source: geoserver_data
+        target: /pywps-flask/data
+
   webapp:
     build: ./webapp
     image: open-city-toolkit/webapp

@@ -6,6 +6,46 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import './styles/style.css';
 
+const parseWPSResponse = (response) => {
+  return response.text().then(text => {
+    const parser = new DOMParser();
+    const document = parser.parseFromString(text, 'text/xml');
+    if (document.getElementsByTagName("ows:Exception").length) {
+      throw new Error("Error: " + document.getElementsByTagName("ows:ExceptionText")[0].textContent);
+    }
+    return document;
+  });
+};
+
+const testWPS = () => {
+  fetch('http://localhost:5000/wps?service=WPS&version=1.0.0&request=Execute&identifier=say_hello&dataInputs=name=React')
+    .then(response => parseWPSResponse(response))
+    .then(document => {
+      alert(document
+        .getElementsByTagName("wps:ProcessOutputs")[0]
+        .getElementsByTagName("wps:Output")[0]
+        .getElementsByTagName("wps:Data")[0]
+        .getElementsByTagName("wps:LiteralData")[0]
+        .textContent);
+    })
+    .catch(err => {
+      console.error(err.message);
+    });
+};
+
+const setResolution = () => {
+  let resolution = 10;
+
+  fetch(`http://localhost:5000/wps?service=WPS&version=1.0.0&request=Execute&identifier=set_resolution&dataInputs=resolution=${resolution}`)
+    .then(response => parseWPSResponse(response))
+    .then(() => {
+      console.log("OK");
+    })
+    .catch(err => {
+      console.error(err.message);
+    });
+};
+
 export const NavbarView = ({ onResultClicked }) => (
   <nav className="navbar navbar-expand navbar-light">
     <div className="navbar-brand fw-bold">Open City Toolkit</div>
@@ -25,13 +65,16 @@ export const NavbarView = ({ onResultClicked }) => (
           <a className="btn btn-light btn-lg dropdown-toggle" id="settings-menu" role="button" data-bs-toggle="dropdown">Settings</a>
           <ul className="dropdown-menu" aria-labelledby="settings-menu">
             <li>
+              <a className="btn dropdown-item" onClick={testWPS}>Test WPS</a>
+            </li>
+            <li>
               <a className="btn dropdown-item" onClick={() => { }}>Set basemap</a>
             </li>
             <li>
-              <a className="btn dropdown-item" onClick={() => { }}>Set Selection</a>
+              <a className="btn dropdown-item" onClick={() => { }}>Set selection</a>
             </li>
             <li>
-              <a className="btn dropdown-item" onClick={() => { }}>Set resolution</a>
+              <a className="btn dropdown-item" onClick={setResolution}>Set resolution</a>
             </li>
             <li>
               <a className="btn dropdown-item" onClick={() => { }}>Add layer</a>

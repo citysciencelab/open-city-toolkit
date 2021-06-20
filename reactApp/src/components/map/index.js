@@ -6,6 +6,8 @@ import './styles/style.css';
 
 export const MapView = () => {
 
+  // this hook only run once on component mount
+  // making sure the leaflet map container doesn't change with any react state change
   useEffect(() => {
     const map = new L.Map('map', {
       center: new L.LatLng(

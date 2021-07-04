@@ -7,48 +7,34 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './styles/style.css';
 import { GlobalContext } from '../store/global';
 
-const parseWPSResponse = (response) => {
-  return response.text().then(text => {
-    const parser = new DOMParser();
-    const document = parser.parseFromString(text, 'text/xml');
-    if (document.getElementsByTagName("ows:Exception").length) {
-      throw new Error("Error: " + document.getElementsByTagName("ows:ExceptionText")[0].textContent);
-    }
-    return document;
-  });
-};
-
-const testWPS = () => {
-  fetch('http://localhost:5000/wps?service=WPS&version=1.0.0&request=Execute&identifier=say_hello&dataInputs=name=React')
-    .then(response => parseWPSResponse(response))
-    .then(document => {
-      alert(document
-        .getElementsByTagName("wps:ProcessOutputs")[0]
-        .getElementsByTagName("wps:Output")[0]
-        .getElementsByTagName("wps:Data")[0]
-        .getElementsByTagName("wps:LiteralData")[0]
-        .textContent);
-    })
-    .catch(err => {
-      console.error(err.message);
-    });
-};
-
-const setResolution = () => {
-  let resolution = 10;
-
-  fetch(`http://localhost:5000/wps?service=WPS&version=1.0.0&request=Execute&identifier=set_resolution&dataInputs=resolution=${resolution}`)
-    .then(response => parseWPSResponse(response))
-    .then(() => {
-      console.log("OK");
-    })
-    .catch(err => {
-      console.error(err.message);
-    });
-};
-
 export const NavbarView = ({ onResultClicked }) => {
-  const { setDialogMessage } = React.useContext(GlobalContext);
+  const { setDialogMessage, fetchWPS } = React.useContext(GlobalContext);
+
+  const testWPS = () => {
+    fetchWPS('say_hello', 'name=React')
+      .then(document => {
+        alert(document
+          .getElementsByTagName("wps:ProcessOutputs")[0]
+          .getElementsByTagName("wps:Output")[0]
+          .getElementsByTagName("wps:Data")[0]
+          .getElementsByTagName("wps:LiteralData")[0]
+          .textContent);
+      })
+      .catch(err => {
+        console.error(err.message);
+      });
+  };
+
+  const setResolution = () => {
+    let resolution = 10;
+    fetchWPS('set_resolution', `resolution=${resolution}`)
+      .then(() => {
+        console.log("OK");
+      })
+      .catch(err => {
+        console.error(err.message);
+      });
+  };
 
   return (
     <nav className="navbar navbar-expand navbar-light">

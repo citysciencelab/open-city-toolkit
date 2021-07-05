@@ -25,7 +25,12 @@ services:
         target: /pywps-flask/outputs
       - type: volume
         source: geoserver_data
-        target: /pywps-flask/data
+        target: /pywps-flask/geoserver_data_dir
+    environment:
+      - GEOSERVER_URL=http://geoserver:8080/
+      - GEOSERVER_USERNAME=admin
+      - GEOSERVER_PASSWORD=geoserver
+      - GRASS_DIR=/pywps-flask/grass
 
   webapp:
     build: ./webapp

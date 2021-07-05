@@ -8,10 +8,10 @@ import './styles/style.css';
 import { GlobalContext } from '../store/global';
 
 export const NavbarView = ({ onResultClicked }) => {
-  const { setDialogMessage, fetchWPS } = React.useContext(GlobalContext);
+  const { setDialogMessage, WPS } = React.useContext(GlobalContext);
 
   const testWPS = () => {
-    fetchWPS('say_hello', 'name=React')
+    WPS.Execute('say_hello', 'name=React')
       .then(document => {
         alert(document
           .getElementsByTagName("wps:ProcessOutputs")[0]
@@ -27,7 +27,8 @@ export const NavbarView = ({ onResultClicked }) => {
 
   const setResolution = () => {
     let resolution = 10;
-    fetchWPS('set_resolution', `resolution=${resolution}`)
+
+    WPS.Execute('set_resolution', `resolution=${resolution}`)
       .then(() => {
         console.log("OK");
       })

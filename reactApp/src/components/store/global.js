@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 
 import { parseWPSResponse } from './utils';
 
-const baseURL = "http://localhost:5000/wps?service=WPS&version=1.0.0&request=Execute&"; // will be moved to .env in following iteration
+const baseURL = "http://localhost:5000/wps"; // will be moved to .env in following iteration
+
 export const GlobalContext = React.createContext();
 
 const initialState = {
   dialogMessage: '',
-  fetchWPS: (identifier, dataInputs) => {
-    return fetch(`${baseURL}identifier=${identifier}&dataInputs=${dataInputs}`)
-      .then(response => parseWPSResponse(response));
+  WPS: {
+    Execute: (identifier, dataInputs) => {
+      return fetch(`${baseURL}?service=WPS&version=1.0.0&request=Execute&identifier=${identifier}&dataInputs=${dataInputs}`)
+        .then(response => parseWPSResponse(response));
+    }
   }
 };
 const actions = {
@@ -31,7 +34,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const value = {
     dialogMessage: state.dialogMessage,
-    fetchWPS: state.fetchWPS,
+    WPS: state.WPS,
     setDialogMessage: (value) => {
       dispatch({ type: actions.SET_DIALOG_MESSAGE, value });
     },

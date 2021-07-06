@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Root } from 'components';
 import 'styles/style.css';
-import { GlobalContextProvider } from './components/store/global';
+import { GlobalContextProvider } from './store/global';
 
 const App = () => {
   return (

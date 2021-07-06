@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import './styles/style.css';
-import { GlobalContext } from '../store/global';
+import { GlobalContext } from '../../store/global';
 
 export const NavbarView = ({ onResultClicked }) => {
   const { setDialogMessage, WPS } = React.useContext(GlobalContext);

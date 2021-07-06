@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles/style.css';
-import { GlobalContext } from '../store/global';
+import { GlobalContext } from '../../store/global';
 
 export const SidebarView = () => {
   const { dialogMessage, WPS } = React.useContext(GlobalContext);

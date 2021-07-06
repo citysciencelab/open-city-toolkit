@@ -11,11 +11,7 @@ export const SidebarView = () => {
   const submitBasemap = () => {
     const formData = new FormData(basemapForm.current);
 
-    fetch(`http://localhost:5000/upload`, {
-      method: "POST",
-      body: formData
-    })
-      .then(response => response.text())
+    WPS.upload(formData)
       .then(response => {
         WPS.Execute('set_basemap', `filename=${response}`)
           .then(() => {

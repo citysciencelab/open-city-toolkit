@@ -1,20 +1,13 @@
 import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
 
-import { parseWPSResponse } from './utils';
-
-const baseURL = "http://localhost:5000/wps"; // will be moved to .env in following iteration
+import { WPS } from './wps';
 
 export const GlobalContext = React.createContext();
 
 const initialState = {
   dialogMessage: '',
-  WPS: {
-    Execute: (identifier, dataInputs) => {
-      return fetch(`${baseURL}?service=WPS&version=1.0.0&request=Execute&identifier=${identifier}&dataInputs=${dataInputs}`)
-        .then(response => parseWPSResponse(response));
-    }
-  }
+  WPS: WPS
 };
 const actions = {
   SET_DIALOG_MESSAGE: 'SET_DIALOG_MESSAGE',

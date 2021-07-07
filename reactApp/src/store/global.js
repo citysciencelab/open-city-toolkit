@@ -7,16 +7,20 @@ export const GlobalContext = React.createContext();
 
 const initialState = {
   dialogMessage: '',
+  activeModule: null,
   WPS: WPS
 };
 const actions = {
   SET_DIALOG_MESSAGE: 'SET_DIALOG_MESSAGE',
+  SET_ACTIVE_MODULE: 'SET_ACTIVE_MODULE'
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_DIALOG_MESSAGE':
       return { ...state, dialogMessage: action.value };
+    case 'SET_ACTIVE_MODULE':
+      return { ...state, activeModule: action.value };
     default:
       return state;
   }
@@ -27,9 +31,13 @@ export const GlobalContextProvider = ({ children }) => {
 
   const value = {
     dialogMessage: state.dialogMessage,
+    activeModule: state.activeModule,
     WPS: state.WPS,
     setDialogMessage: (value) => {
       dispatch({ type: actions.SET_DIALOG_MESSAGE, value });
+    },
+    setActiveModule: (value) => {
+      dispatch({ type: actions.SET_ACTIVE_MODULE, value });
     },
   };
 

@@ -6,9 +6,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import './styles/style.css';
 import { GlobalContext } from '../../store/global';
+import { SetBasemapModule } from '../../modules/setBasemap';
 
 export const NavbarView = ({ onResultClicked }) => {
-  const { setDialogMessage, WPS } = React.useContext(GlobalContext);
+  const { setDialogMessage, setActiveModule, WPS } = React.useContext(GlobalContext);
 
   const testWPS = () => {
     WPS.Execute('say_hello', 'name=React')
@@ -59,7 +60,7 @@ export const NavbarView = ({ onResultClicked }) => {
                 <a className="btn dropdown-item" onClick={testWPS}>Test WPS</a>
               </li>
               <li>
-                <a className="btn dropdown-item" onClick={() => { }}>Set basemap</a>
+                <a className="btn dropdown-item" onClick={() => setActiveModule(SetBasemapModule)}>Set basemap</a>
               </li>
               <li>
                 <a className="btn dropdown-item" onClick={() => { }}>Set selection</a>

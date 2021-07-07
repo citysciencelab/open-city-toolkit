@@ -7,9 +7,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './styles/style.css';
 import { GlobalContext } from '../../store/global';
 import { SetBasemapModule } from '../../modules/setBasemap';
+import { SetResolutionModule } from '../../modules/setResolution';
 
 export const NavbarView = ({ onResultClicked }) => {
-  const { setDialogMessage, setActiveModule, WPS } = React.useContext(GlobalContext);
+  const { setActiveModule, WPS } = React.useContext(GlobalContext);
 
   const testWPS = () => {
     WPS.Execute('say_hello', 'name=React')
@@ -26,18 +27,6 @@ export const NavbarView = ({ onResultClicked }) => {
       });
   };
 
-  const setResolution = () => {
-    let resolution = 10;
-
-    WPS.Execute('set_resolution', `resolution=${resolution}`)
-      .then(() => {
-        console.log("OK");
-      })
-      .catch(err => {
-        console.error(err.message);
-      });
-  };
-
   return (
     <nav className="navbar navbar-expand navbar-light">
       <div className="navbar-brand fw-bold">Open City Toolkit</div>
@@ -48,7 +37,7 @@ export const NavbarView = ({ onResultClicked }) => {
             <option value="time_map">Calculate time map</option>
             <option value="query">Query area</option>
           </select>
-          <button className="btn btn-success btn-lg me-2" onClick={() => { setDialogMessage('running!'); }}>▷&nbsp;Run</button>
+          <button className="btn btn-success btn-lg me-2" onClick={() => { }}>▷&nbsp;Run</button>
           <button className="btn btn-light btn-lg" id="result-btn" onClick={onResultClicked}>Results</button>
         </li>
         <li className="nav-item flex-grow-1" />
@@ -66,7 +55,7 @@ export const NavbarView = ({ onResultClicked }) => {
                 <a className="btn dropdown-item" onClick={() => { }}>Set selection</a>
               </li>
               <li>
-                <a className="btn dropdown-item" onClick={setResolution}>Set resolution</a>
+                <a className="btn dropdown-item" onClick={() => setActiveModule(SetResolutionModule)}>Set resolution</a>
               </li>
               <li>
                 <a className="btn dropdown-item" onClick={() => { }}>Add layer</a>

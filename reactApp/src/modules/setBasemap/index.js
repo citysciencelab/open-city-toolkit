@@ -9,7 +9,7 @@ const MessageView1 = ({ setStep }) => {
   return (
     <>
       <div>
-        Do you want to set a new basemap?
+        If you set a new basemap, the existing basemap will be overwritten. Do you want to set a new basemap?
       </div>
       <div className="btn-group">
         <button type="button" className="btn btn-primary" onClick={() => setStep(1)}>Yes</button>
@@ -70,7 +70,7 @@ MessageView2.propTypes = {
 const MessageView3 = () => {
   return (
     <div>
-      Done!
+      Basemap has been set.
     </div>
   );
 };
